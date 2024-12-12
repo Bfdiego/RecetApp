@@ -18,7 +18,7 @@ private lateinit var introList: List<Intro>
         introList = listOf(
             Intro(
                 fondo = R.drawable.acercaderecetapp,
-                image = R.color.backgroundrecetapp,
+                image = R.color.darkRed,
                 titulo = "¡Bienvenid@ a RecetApp!",
                 descripcion = "Tu compañera ideal en la cocina. \n" +
                         "Descubre recetas y guarda\n" +
