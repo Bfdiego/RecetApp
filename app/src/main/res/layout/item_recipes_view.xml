@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
     android:orientation="vertical"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    tools:context=".MenuActivity">
 
     <ImageView
         android:id="@+id/image_view_recipe"
         android:layout_width="125dp"
         android:layout_height="200dp"
-        android:src=""/>
+        android:src="@color/black"/>
     
     <TextView
         android:id="@+id/text_view_name"
