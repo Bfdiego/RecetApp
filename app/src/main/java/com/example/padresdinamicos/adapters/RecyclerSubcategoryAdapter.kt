@@ -44,8 +44,9 @@ class RecyclerSubcategoryAdapter : RecyclerView.Adapter<RecyclerSubcategoryAdapt
                 layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 adapter = recipeAdapter
-
             }
+
+            recipeAdapter.addDataToList(data.recipes)
         }
     }
 
