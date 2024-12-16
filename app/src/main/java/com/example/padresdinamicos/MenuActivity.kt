@@ -15,7 +15,6 @@ import com.google.gson.Gson
 class MenuActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMenuBinding
     private val recyclerSubcategoryAdapter by lazy { RecyclerSubcategoryAdapter() }
-    private val recyclerRecipeAdapter by lazy { RecyclerRecipeAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
