@@ -7,5 +7,6 @@ import androidx.room.PrimaryKey
 data class Subcategory(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val name: String,
-    val recipes: List<Recipe>
+    val recipes: List<Recipe>,
+    val category: String
 )
