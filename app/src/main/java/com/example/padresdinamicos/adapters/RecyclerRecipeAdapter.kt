@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.padresdinamicos.R
 import com.example.padresdinamicos.databinding.ItemRecipesViewBinding
 import com.example.padresdinamicos.dataclasses.Recipe
 
@@ -37,7 +38,7 @@ class RecyclerRecipeAdapter :
         RecyclerView.ViewHolder(binding.root)  {
         fun binding(data: Recipe) {
 
-            //binding.imageViewRecipe.src = data.image
+            //binding.imageViewRecipe.setImageResource(data.image)
             binding.textViewName.text = data.name
 
         }
