@@ -1,10 +1,9 @@
 package com.example.padresdinamicos
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.padresdinamicos.adapters.RecyclerRecipeAdapter
 import com.example.padresdinamicos.adapters.RecyclerSubcategoryAdapter
@@ -16,7 +15,6 @@ import com.google.gson.Gson
 class MenuActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMenuBinding
     private val recyclerSubcategoryAdapter by lazy { RecyclerSubcategoryAdapter() }
-    private val recyclerRecipeAdapter by lazy { RecyclerRecipeAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -216,7 +214,10 @@ class MenuActivity : AppCompatActivity() {
             adapter = recyclerSubcategoryAdapter
         }
 
-
+        binding.categoryIcon.setOnClickListener {
+            val intentCategory = Intent(this, CategoriesActivity::class.java)
+            startActivity(intentCategory)
+        }
 
     }
 }
