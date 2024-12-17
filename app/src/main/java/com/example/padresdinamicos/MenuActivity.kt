@@ -36,7 +36,7 @@ class MenuActivity : AppCompatActivity() {
 
     fun setUpRecyclerView() {
         val listaDatos = mutableListOf(
-            Subcategory(name = "Italia", listOf(
+            Subcategory(name = "Italia", recipes = listOf(
                 Recipe(name = "Pasta Carbonara", ingredients = listOf("Spaguetti", "Tocino", "Parmesano", "Huevo")),
                 Recipe(name = "Pizza Margarita", ingredients = listOf("Masa", "Tomate", "Mozzarella", "Albahaca")),
                 Recipe(name = "Lasagna", ingredients = listOf("Pasta", "Carne", "Queso", "Tomate")),
