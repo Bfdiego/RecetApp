@@ -19,10 +19,26 @@
         android:layout_marginTop="80dp"
         app:cardCornerRadius="60dp">
 
-        <ImageButton
-            android:id="@+id/category_paises"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/category_paises"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/paises"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="PAISES"
+                android:textColor="@color/white"
+                android:textSize="28sp"/>
+        </FrameLayout>
+
 
     </androidx.cardview.widget.CardView>
 
@@ -37,10 +53,26 @@
         android:layout_marginTop="40dp"
         app:cardCornerRadius="60dp">
 
-        <ImageButton
-            android:id="@+id/category_tipo_de_comida"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/category_tipo_de_comida"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/tiposdecomida"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="TIPO DE COMIDA"
+                android:textColor="@color/white"
+                android:textSize="28sp"/>
+        </FrameLayout>
+
 
     </androidx.cardview.widget.CardView>
 
@@ -55,10 +87,26 @@
         android:layout_marginTop="40dp"
         app:cardCornerRadius="60dp">
 
-        <ImageButton
-            android:id="@+id/category_estilo_de_alimentacion"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/category_estilo_de_alimentacion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/estilodealimentacion"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="ESTILO DE ALIMENTACION"
+                android:textColor="@color/white"
+                android:textSize="28sp"/>
+        </FrameLayout>
+
 
     </androidx.cardview.widget.CardView>
 
@@ -73,10 +121,26 @@
         android:layout_marginTop="40dp"
         app:cardCornerRadius="60dp">
 
-        <ImageButton
-            android:id="@+id/category_metodo_de_preparacion"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/category_metodo_de_preparacion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/metododepreparacion"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="METODO DE PREPARACION"
+                android:textColor="@color/white"
+                android:textSize="28sp"/>
+        </FrameLayout>
+
 
     </androidx.cardview.widget.CardView>
 
@@ -91,11 +155,25 @@
         android:layout_marginTop="40dp"
         app:cardCornerRadius="60dp">
 
-        <ImageButton
-            android:id="@+id/category_eventos"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
 
+            <ImageButton
+                android:id="@+id/category_eventos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/eventos"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="EVENTOS"
+                android:textColor="@color/white"
+                android:textSize="28sp"/>
+        </FrameLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -117,13 +195,6 @@
             android:textSize="30sp"
             android:gravity="center"
             android:textColor="@color/white"/>
-
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_margin="5dp"
-            app:layout_constraintDimensionRatio="1:1"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

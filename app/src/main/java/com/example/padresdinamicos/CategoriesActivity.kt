@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.padresdinamicos.MenuActivity.Companion.ID_PASO_SUBCATEGORIA
 import com.example.padresdinamicos.databinding.ActivityCategoriesBinding
 import com.example.padresdinamicos.databinding.ActivityMenuBinding
 import com.example.padresdinamicos.databinding.ActivityUserScreenBinding
@@ -29,14 +30,32 @@ class CategoriesActivity : BaseActivity() {
         binding.userIcon.setOnClickListener{
             val intentUserActivity = Intent(this, UserScreenActivity::class.java)
             startActivity(intentUserActivity)
-
         }
 
         binding.categoryPaises.setOnClickListener{
             val intentPaisesActivity = Intent(this, CategoryActivity::class.java)
-            intentPaisesActivity.putExtra("category", "Paises")
+            intentPaisesActivity.putExtra(ID_PASO_SUBCATEGORIA, "Paises")
             startActivity(intentPaisesActivity)
-
+        }
+        binding.categoryMetodoDePreparacion.setOnClickListener{
+            val intentPaisesActivity = Intent(this, CategoryActivity::class.java)
+            intentPaisesActivity.putExtra(ID_PASO_SUBCATEGORIA, "Metodo de preparación")
+            startActivity(intentPaisesActivity)
+        }
+        binding.categoryTipoDeComida.setOnClickListener {
+            val intentTipoComidaActivity = Intent(this, CategoryActivity::class.java)
+            intentTipoComidaActivity.putExtra(ID_PASO_SUBCATEGORIA, "Tipo de comida")
+            startActivity(intentTipoComidaActivity)
+        }
+        binding.categoryEstiloDeAlimentacion.setOnClickListener {
+            val intentEstiloAlimentacionActivity = Intent(this, CategoryActivity::class.java)
+            intentEstiloAlimentacionActivity.putExtra(ID_PASO_SUBCATEGORIA, "Estilo de alimentación")
+            startActivity(intentEstiloAlimentacionActivity)
+        }
+        binding.categoryEventos.setOnClickListener {
+            val intentEventosActivity = Intent(this, CategoryActivity::class.java)
+            intentEventosActivity.putExtra(ID_PASO_SUBCATEGORIA, "Eventos")
+            startActivity(intentEventosActivity)
         }
 
     }

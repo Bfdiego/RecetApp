@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.padresdinamicos.MenuActivity.Companion.ID_PASO_SUBCATEGORIA
 import com.example.padresdinamicos.adapters.RecyclerSubcategoryAdapter
 import com.example.padresdinamicos.databinding.ActivityCategoryBinding
 import com.example.padresdinamicos.dataclasses.Subcategory
@@ -16,7 +17,7 @@ import kotlinx.coroutines.launch
 
 class CategoryActivity : BaseActivity() {
     private lateinit var binding: ActivityCategoryBinding
-    private val recyclerSubcategoryAdapter by lazy { RecyclerSubcategoryAdapter() }
+    private val recyclerCategoryAdapter by lazy { RecyclerSubcategoryAdapter() }
     private lateinit var dbAccess : RecipeDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,9 +28,13 @@ class CategoryActivity : BaseActivity() {
         setContentView(view)
         dbAccess = getDatabase(this)
 
+        setUpCategory()
+        binding.buttonExit.setOnClickListener{
+            finish()
+        }
     }
 
-    fun setUp(){
+    fun setUpCategory(){
         lifecycleScope.launch {
             val subcategories = listOf(
                 Subcategory(name = "Italia", recipes = dbAccess.recipeDao().obtenerPorSubcategoria("Italia"), category = "Paises"),
@@ -59,11 +64,26 @@ class CategoryActivity : BaseActivity() {
                 Subcategory(name = "Año nuevo", recipes = dbAccess.recipeDao().obtenerPorSubcategoria("Año nuevo"), category = "Eventos")
             )
 
-            recyclerSubcategoryAdapter.addDataToList(subcategories)
+            val category = intent.getStringExtra(ID_PASO_SUBCATEGORIA)
+            if (category == "Paises"){
+                recyclerCategoryAdapter.addDataToList(subcategories.filter { it.category == "Paises" })
+            } else if (category == "Tipo de comida"){
+                recyclerCategoryAdapter.addDataToList(subcategories.filter { it.category == "Tipo de comida" })
+
+            } else if (category == "Estilo de alimentación"){
+                recyclerCategoryAdapter.addDataToList(subcategories.filter { it.category == "Estilo de alimentación" })
+
+            } else if (category == "Metodo de preparación"){
+                recyclerCategoryAdapter.addDataToList(subcategories.filter { it.category == "Metodo de preparación" })
+            } else if (category == "Eventos"){
+                recyclerCategoryAdapter.addDataToList(subcategories.filter { it.category == "Eventos" })
+            } else {
+                recyclerCategoryAdapter.addDataToList(subcategories)
+            }
             binding.recyclerViewCategory.apply {
                 layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-                adapter = recyclerSubcategoryAdapter
+                adapter = recyclerCategoryAdapter
             }
         }
     }

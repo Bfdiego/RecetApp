@@ -21,6 +21,7 @@ class MenuActivity : BaseActivity() {
 
     companion object {
         val ID_PASO_RECETA = "ID_PASO_RECETA"
+        val ID_PASO_SUBCATEGORIA = "ID_PASO_SUBCATEGORIA"
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,10 +52,10 @@ class MenuActivity : BaseActivity() {
                     Recipe(name = "Okonomiyaki", image = R.drawable.okonomiyaki, category = "Japón", subcategory1 = "Japón", subcategory2 = "Okonomiyaki", ingredients = arrayListOf("Harina de trigo", "Huevo", "Col rallada", "Cebollín", "Tocino o cerdo", "Salsa okonomiyaki", "Mayonesa japonesa", "Katsuobushi (copos de bonito seco)")),
                     Recipe(name = "Dorayaki", image = R.drawable.dorayaki, category = "Japón", subcategory1 = "Japón", subcategory2 = "Dorayaki", ingredients = arrayListOf("Harina de trigo", "Huevo", "Azúcar", "Miel", "Pasta de frijol rojo (anko)", "Bicarbonato de sodio")),
                     Recipe(name = "Silpancho", image = R.drawable.silpancho, category = "Bolivia", subcategory1 = "Bolivia", subcategory2 = "Silpancho", ingredients = arrayListOf("Carne de res", "Arroz", "Papa", "Huevo", "Cebolla", "Tomate")),
-                    Recipe(name = "Plato Paceño", image = R.drawable.recetapplogo, category = "Bolivia", subcategory1 = "Bolivia", subcategory2 = "Plato Paceño", ingredients = arrayListOf("Arroz", "Papa", "Carne de res", "Chicharrón", "Salsa de maní")),
-                    Recipe(name = "Majadito", image = R.drawable.recetapplogo, category = "Bolivia", subcategory1 = "Bolivia", subcategory2 = "Majadito", ingredients = arrayListOf("Arroz", "Carne de res", "Plátano", "Huevo", "Verduras")),
-                    Recipe(name = "Sopa de Maní", image = R.drawable.recetapplogo, category = "Bolivia", subcategory1 = "Bolivia", subcategory2 = "Sopa de Maní", ingredients = arrayListOf("Maní", "Carne de res", "Papa", "Fideos", "Verduras")),
-                    Recipe(name = "Pique a lo Macho", image = R.drawable.recetapplogo, category = "Bolivia", subcategory1 = "Bolivia", subcategory2 = "Pique a lo Macho", ingredients = arrayListOf("Carne de res", "Papa", "Cebolla", "Tomate", "Ají rojo")),
+                    Recipe(name = "Plato Paceño", image = R.drawable.platopaceno, category = "Bolivia", subcategory1 = "Bolivia", subcategory2 = "Plato Paceño", ingredients = arrayListOf("Arroz", "Papa", "Carne de res", "Chicharrón", "Salsa de maní")),
+                    Recipe(name = "Majadito", image = R.drawable.majadito, category = "Bolivia", subcategory1 = "Bolivia", subcategory2 = "Majadito", ingredients = arrayListOf("Arroz", "Carne de res", "Plátano", "Huevo", "Verduras")),
+                    Recipe(name = "Sopa de Maní", image = R.drawable.sopademani, category = "Bolivia", subcategory1 = "Bolivia", subcategory2 = "Sopa", ingredients = arrayListOf("Maní", "Carne de res", "Papa", "Fideos", "Verduras")),
+                    Recipe(name = "Pique a lo Macho", image = R.drawable.piquealomacho, category = "Bolivia", subcategory1 = "Bolivia", subcategory2 = "Pique a lo Macho", ingredients = arrayListOf("Carne de res", "Papa", "Cebolla", "Tomate", "Ají rojo")),
                     Recipe(name = "Quiche Lorraine", image = R.drawable.quichelorraine, category = "Francia", subcategory1 = "Francia", subcategory2 = "Quiche Lorraine", ingredients = arrayListOf("Masa quebrada", "Huevo", "Crema de leche", "Bacon", "Queso Gruyère", "Cebolla", "Pimienta")),
                     Recipe(name = "Ratatouille", image = R.drawable.ratatouille, category = "Paises", subcategory1 = "Francia", subcategory2 = "Ratatouille", ingredients = arrayListOf("Berenjena", "Calabacín", "Pimiento rojo", "Tomate", "Cebolla", "Ajo", "Aceite de oliva", "Hierbas provenzales")),
                     Recipe(name = "Soupe à l'Oignon", image = R.drawable.soupeaioignon, category = "Francia", subcategory1 = "Francia", subcategory2 = "Soupe à l'Oignon", ingredients = arrayListOf("Cebolla", "Caldo de carne", "Vino blanco", "Pan", "Queso Gruyère", "Mantequilla", "Harina")),
