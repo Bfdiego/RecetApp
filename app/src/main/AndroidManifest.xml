@@ -19,7 +19,7 @@
             android:name=".CreateRecipeActivity"
             android:exported="false" />
         <activity
-            android:name=".userScreen"
+            android:name=".UserScreenActivity"
             android:exported="false" />
         <activity
             android:name=".BienvenidaActivity"

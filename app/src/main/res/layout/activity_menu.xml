@@ -30,6 +30,7 @@
                     android:id="@+id/image_recipe"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:scaleType="centerCrop"
                     app:layout_constraintDimensionRatio="412:472"
                     app:layout_constraintTop_toTopOf="parent"/>
 
