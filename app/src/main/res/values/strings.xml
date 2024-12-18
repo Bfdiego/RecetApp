@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PadresDinamicos</string>
+    <string name="categoria">Categoria</string>
 </resources>
