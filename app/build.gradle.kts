@@ -46,6 +46,8 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")  // o versión más reciente
 
     implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.29")
+
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.7.0")
@@ -60,6 +62,7 @@ dependencies {
     kapt("androidx.room:room-compiler:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
 
+    implementation("com.google.android.material:material:1.9.")
     implementation("com.google.code.gson:gson:2.11.0")
     implementation("androidx.activity:activity:1.9.3")
     testImplementation("junit:junit:4.13.2")
