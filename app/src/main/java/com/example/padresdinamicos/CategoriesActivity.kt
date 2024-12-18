@@ -27,7 +27,7 @@ class CategoriesActivity : BaseActivity() {
             startActivity(intentMenuActivity)
         }
         binding.userIcon.setOnClickListener{
-            val intentUserActivity = Intent(this, userScreen::class.java)
+            val intentUserActivity = Intent(this, UserScreenActivity::class.java)
             startActivity(intentUserActivity)
 
         }
