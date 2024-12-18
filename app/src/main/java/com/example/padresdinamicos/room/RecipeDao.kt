@@ -14,6 +14,7 @@ interface RecipeDao {
     @Query("SELECT * FROM Recipe WHERE subcategory1 = :subcategoriaName OR subcategory2 = :subcategoriaName")
     suspend fun obtenerPorSubcategoria(subcategoriaName: String): List<Recipe>
 
+
     @Query("SELECT * FROM Recipe")
     suspend fun obtenerTodasLasRecetas(): List<Recipe>
 

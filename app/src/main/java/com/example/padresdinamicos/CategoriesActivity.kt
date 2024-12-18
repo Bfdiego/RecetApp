@@ -32,5 +32,12 @@ class CategoriesActivity : BaseActivity() {
 
         }
 
+        binding.categoryPaises.setOnClickListener{
+            val intentPaisesActivity = Intent(this, CategoryActivity::class.java)
+            intentPaisesActivity.putExtra("category", "Paises")
+            startActivity(intentPaisesActivity)
+
+        }
+
     }
 }
