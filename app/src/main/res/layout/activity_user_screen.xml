@@ -64,6 +64,7 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginEnd="20dp"
+        android:id="@+id/edituser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/edit_text_user"
         app:layout_constraintBottom_toBottomOf="@id/edit_text_user"/>
@@ -90,6 +91,7 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginEnd="20dp"
+        android:id="@+id/editcorreo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/edit_text_correo"
         app:layout_constraintBottom_toBottomOf="@id/edit_text_correo"/>
@@ -117,6 +119,7 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginEnd="20dp"
+        android:id="@+id/editpassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/edit_text_password"
         app:layout_constraintBottom_toBottomOf="@id/edit_text_password"/>
@@ -136,7 +139,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Categorías"
+            android:text="Perfil"
             android:textSize="30sp"
             android:gravity="center"
             android:textColor="@color/white"/>
