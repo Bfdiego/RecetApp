@@ -2,7 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
-//    kotlin("kapt")
+    kotlin("kapt")
 }
 
 android {
@@ -55,10 +55,10 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
     implementation("com.google.firebase:firebase-auth")
 
-//    val room_version = "2.6.1"
-//    implementation("androidx.room:room-runtime:$room_version")
-//    kapt("androidx.room:room-compiler:$room_version")
-//    implementation("androidx.room:room-ktx:$room_version")
+    val room_version = "2.6.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
 
     implementation("com.google.code.gson:gson:2.11.0")
     implementation("androidx.activity:activity:1.9.3")
