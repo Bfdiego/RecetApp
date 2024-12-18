@@ -5,10 +5,14 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.padresdinamicos.adapters.RecyclerAddIngredientAdapter
 import com.example.padresdinamicos.databinding.ActivityCreateRecipeBinding
+import com.example.padresdinamicos.dataclasses.Ingredient
 
 class CreateRecipeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCreateRecipeBinding
+    private lateinit var recyclerAdapter: RecyclerAddIngredientAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +21,24 @@ class CreateRecipeActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        // Opciones de dificultad
+        recyclerAdapter = RecyclerAddIngredientAdapter()
+        binding.recyclerViewIngredients.adapter = recyclerAdapter
+        binding.recyclerViewIngredients.layoutManager = LinearLayoutManager(this)
+
+        // Botón para agregar nuevos EditText
+        binding.buttonAddIngredient.setOnClickListener {
+            recyclerAdapter.addEmptyItem() // Añadir un nuevo ítem vacío
+        }
+
+//        binding.buttonSaveRecipe.setOnClickListener {
+//            val ingredientsList = adapter.getAllIngredients()
+//            for (ingredient in ingredientsList) {
+//                Log.d("Ingredients", "Cantidad: ${ingredient.amount}, Ingrediente: ${ingredient.name}")
+//            }
+//            // Aquí puedes usar la lista para guardar la receta
+//        }
+//
+
         val difficultyLevels = arrayOf("Fácil", "Medio", "Difícil")
 
         // Configuración del Spinner
