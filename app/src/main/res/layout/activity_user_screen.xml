@@ -68,6 +68,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/edit_text_user"
         app:layout_constraintBottom_toBottomOf="@id/edit_text_user"/>
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/confirm_user"
+        app:layout_constraintStart_toStartOf="@id/edituser"
+        app:layout_constraintTop_toTopOf="@id/edit_text_user"
+        app:layout_constraintBottom_toBottomOf="@id/edit_text_user"
+        app:layout_constraintEnd_toEndOf="@+id/edituser"/>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -111,7 +121,7 @@
         android:layout_width="370dp"
         android:layout_height="70dp"
         android:layout_marginTop="30dp"
-
+        android:enabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_text_correo"/>
@@ -145,6 +155,7 @@
             android:textColor="@color/white"/>
 
         <ImageButton
+            android:id="@+id/button_back"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:layout_constraintEnd_toEndOf="parent"

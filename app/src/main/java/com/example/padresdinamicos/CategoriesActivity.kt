@@ -30,5 +30,6 @@ class CategoriesActivity : AppCompatActivity() {
             startActivity(intentUserActivity)
 
         }
+
     }
 }

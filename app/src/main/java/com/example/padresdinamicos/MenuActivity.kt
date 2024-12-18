@@ -37,13 +37,6 @@ class MenuActivity : AppCompatActivity() {
 
         dbAccess = getDatabase(this)
         lifecycleScope.launch {
-            val randomRecipe = dbAccess.recipeDao().obtenerRecetaAleatoria()
-            binding.nameRecipe.text = randomRecipe.name
-            binding.imageRecipe.setImageResource(randomRecipe.image)
-            binding.categoryName.text = randomRecipe.category
-            binding.subcategoryName.text = randomRecipe.subcategory1
-        }
-        lifecycleScope.launch {
             if (dbAccess.recipeDao().obtenerTodasLasRecetas().isEmpty()){
                 val recipes = listOf(
                     Recipe(name = "Pasta Carbonara", image = R.drawable.recetapplogo, category =  "Paises", subcategory1 = "Italia", subcategory2 = "Platos Principales", ingredients = arrayListOf("Spaguetti", "Tocino", "Parmesano", "Huevo")),
@@ -181,6 +174,13 @@ class MenuActivity : AppCompatActivity() {
                 }
 
             }
+        }
+        lifecycleScope.launch {
+            val randomRecipe = dbAccess.recipeDao().obtenerRecetaAleatoria()
+            binding.nameRecipe.text = randomRecipe.name
+            binding.imageRecipe.setImageResource(randomRecipe.image)
+            binding.categoryName.text = randomRecipe.category
+            binding.subcategoryName.text = randomRecipe.subcategory1
         }
 
 

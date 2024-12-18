@@ -11,7 +11,7 @@ import com.example.padresdinamicos.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityRegisterBinding // Usamos View Binding
+    private lateinit var binding: ActivityRegisterBinding
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +21,7 @@ class RegisterActivity : AppCompatActivity() {
 
 
         sharedPreferences = getSharedPreferences("login_prefs", MODE_PRIVATE)
+
 
        binding.buttonLogin.setOnClickListener {
             val email = binding.editTextEmail.text.toString().trim()
@@ -76,4 +77,5 @@ class RegisterActivity : AppCompatActivity() {
     private fun isValidEmail(email: String): Boolean {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
+
 }
