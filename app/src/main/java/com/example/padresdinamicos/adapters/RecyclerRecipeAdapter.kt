@@ -38,7 +38,7 @@ class RecyclerRecipeAdapter :
         RecyclerView.ViewHolder(binding.root)  {
         fun binding(data: Recipe) {
 
-            //binding.imageViewRecipe.setImageResource(data.image)
+            binding.imageViewRecipe.setImageResource(data.image)
             binding.textViewName.text = data.name
 
         }
