@@ -7,8 +7,8 @@
     tools:context=".MenuActivity"
     android:layout_marginStart="15dp">
 
-    <ImageView
-        android:id="@+id/image_view_recipe"
+    <ImageButton
+        android:id="@+id/button_view_recipe"
         android:layout_width="140dp"
         android:layout_height="210dp"
         android:src="@color/black"/>
@@ -16,8 +16,9 @@
     <TextView
         android:id="@+id/text_view_name"
         android:layout_width="140dp"
-        android:layout_height="22dp"
+        android:layout_height="40dp"
         android:text=""
+        android:textColor="@color/white"
         android:textSize="15sp"/>
 
 </LinearLayout>

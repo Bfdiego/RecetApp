@@ -202,6 +202,7 @@
         android:background="@color/darkBlue">
 
         <ImageButton
+            android:id="@+id/button_back"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:layout_constraintStart_toStartOf="parent"

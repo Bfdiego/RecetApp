@@ -23,7 +23,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src=""/>
+            android:src="@color/black"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -37,7 +37,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src=""/>
+            android:src="@color/white"/>
 
     </androidx.cardview.widget.CardView>
 
