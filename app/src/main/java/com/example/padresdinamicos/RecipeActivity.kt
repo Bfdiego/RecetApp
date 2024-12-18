@@ -2,6 +2,8 @@ package com.example.padresdinamicos
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -35,22 +37,33 @@ class RecipeActivity : AppCompatActivity() {
     }
 
 
+    fun convertirIngredientes(ingredients: List<String>): List<Ingredient> {
+        return ingredients.mapNotNull { ingredient ->
+            // Validamos que el string esté en el formato correcto
+            val partes = ingredient.split("-")
+            if (partes.size == 2) {
+                // Si el formato es válido, creamos un objeto Ingredient
+                Ingredient(name = partes[0].trim(), amount = partes[1].trim())
+            } else {
+                // Si el formato no es válido, devolvemos null
+                null
+            }
+        }
+    }
     fun setUpRecyclerView() {
         val recipe: Recipe? = intent.getSerializableExtra(ID_PASO_RECETA) as? Recipe
         val nameRecipe = recipe?.name
-        val listaDatos = mutableListOf(
-            Ingredient(name = "$nameRecipe", amount = "12"),
-            Ingredient(name = "Cebolla", amount = "1"),
-            Ingredient(name = "Zanahoria", amount = "1"),
-            Ingredient(name = "Papa", amount = "1"),
-            Ingredient(name = "Lechuga", amount = "1"),
-            Ingredient(name = "Tomate", amount = "12"),
-            Ingredient(name = "Cebolla", amount = "1"),
-            Ingredient(name = "Zanahoria", amount = "1"),
-            Ingredient(name = "Papa", amount = "1"),
-        )
+        binding.recipeName.text = nameRecipe
+        binding.textCategory.text = recipe?.category
+        binding.textSubcategory1.text = recipe?.subcategory1
+        binding.textSubcategory2.text = recipe?.subcategory2
+        binding.imageRecipe.setImageResource(recipe?.image ?: R.drawable.lasagna)
 
-        recyclerIngredientAdapter.addDataToList(listaDatos)
+        binding.recyclerViewIngredients.visibility = View.VISIBLE
+
+        val listaIngredientes = convertirIngredientes(recipe?.ingredients ?: emptyList())
+
+        recyclerIngredientAdapter.addDataToList(listaIngredientes)
 
         binding.recyclerViewIngredients.apply {
             layoutManager =

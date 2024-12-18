@@ -35,21 +35,15 @@ class MenuActivity : AppCompatActivity() {
 
 
         dbAccess = getDatabase(this)
-        lifecycleScope.launch {
-            val randomRecipe = dbAccess.recipeDao().obtenerRecetaAleatoria()
-            binding.nameRecipe.text = randomRecipe.name
-            binding.imageRecipe.setImageResource(randomRecipe.image)
-            binding.categoryName.text = randomRecipe.category
-            binding.subcategoryName.text = randomRecipe.subcategory1
-        }
+
         lifecycleScope.launch {
             if (dbAccess.recipeDao().obtenerTodasLasRecetas().isEmpty()){
                 val recipes = listOf(
-                    Recipe(name = "Pasta Carbonara", image = R.drawable.recetapplogo, category =  "Paises", subcategory1 = "Italia", subcategory2 = "Platos Principales", ingredients = arrayListOf("Spaguetti", "Tocino", "Parmesano", "Huevo")),
-                    Recipe(name = "Pizza Margarita", image = R.drawable.recetapplogo, category =  "Paises", subcategory1 = "Italia", subcategory2 = "Platos Principales", ingredients = arrayListOf("Masa", "Tomate", "Mozzarella", "Albahaca")),
-                    Recipe(name = "Lasagna", image = R.drawable.recetapplogo, category =  "Paises", subcategory1 = "Italia", subcategory2 = "Platos Principales", ingredients = arrayListOf("Pasta", "Carne", "Queso", "Tomate")),
-                    Recipe(name = "Risotto al pesto", image = R.drawable.recetapplogo, category =  "Paises", subcategory1 = "Italia", subcategory2 = "Platos Principales", ingredients = arrayListOf("Arroz", "Pescado", "Pesto", "Ajo")),
-                    Recipe(name = "Tiramisu", image = R.drawable.recetapplogo, category =  "Paises", subcategory1 = "Italia", subcategory2 = "Postres", ingredients = arrayListOf("Masa", "Chocolate", "Leche", "Canela")),
+                    Recipe(name = "Pasta Carbonara", image = R.drawable.pastacarbonara, category =  "Paises", subcategory1 = "Italia", subcategory2 = "Platos Principales", ingredients = arrayListOf("Spaguetti", "Tocino", "Parmesano", "Huevo")),
+                    Recipe(name = "Pizza Margarita", image = R.drawable.pizzamargarita, category =  "Paises", subcategory1 = "Italia", subcategory2 = "Platos Principales", ingredients = arrayListOf("Masa", "Tomate", "Mozzarella", "Albahaca")),
+                    Recipe(name = "Lasagna", image = R.drawable.lasagna, category =  "Paises", subcategory1 = "Italia", subcategory2 = "Platos Principales", ingredients = arrayListOf("Pasta", "Carne", "Queso", "Tomate")),
+                    Recipe(name = "Risotto al pesto", image = R.drawable.risottoalpesto, category =  "Paises", subcategory1 = "Italia", subcategory2 = "Platos Principales", ingredients = arrayListOf("Arroz", "Pescado", "Pesto", "Ajo")),
+                    Recipe(name = "Tiramisu", image = R.drawable.tiramisu, category =  "Paises", subcategory1 = "Italia", subcategory2 = "Postres", ingredients = arrayListOf("Masa", "Chocolate", "Leche", "Canela")),
                     Recipe(name = "Tacos al Pastor", image = R.drawable.recetapplogo, category =  "Paises", subcategory1 = "México", subcategory2 = "Entradas", ingredients = arrayListOf("Tortilla", "Carne al Pastor", "Cilantro", "Cebolla", "Piña")),
                     Recipe(name = "Enchiladas Verdes", image = R.drawable.recetapplogo, category =  "Paises", subcategory1 = "México", subcategory2 = "Alta en Proteína", ingredients = arrayListOf("Tortillas", "Salsa verde", "Pollo", "Cebolla","Crema")),
                     Recipe(name = "Guacamole", image = R.drawable.recetapplogo, category =  "Paises", subcategory1 = "México", subcategory2 = "Vegana", ingredients = arrayListOf("Aguacate", "Tomate", "Cebolla", "Cilantro", "Lima")),
@@ -60,11 +54,11 @@ class MenuActivity : AppCompatActivity() {
                     Recipe(name = "Tempura", image = R.drawable.recetapplogo, category = "Japón", subcategory1 = "Japón", subcategory2 = "Tempura", ingredients = arrayListOf("Mariscos (camarones, calamares)", "Verduras (zanahoria, calabacín, berenjena)", "Harina de trigo", "Huevo", "Agua fría", "Aceite para freír")),
                     Recipe(name = "Okonomiyaki", image = R.drawable.recetapplogo, category = "Japón", subcategory1 = "Japón", subcategory2 = "Okonomiyaki", ingredients = arrayListOf("Harina de trigo", "Huevo", "Col rallada", "Cebollín", "Tocino o cerdo", "Salsa okonomiyaki", "Mayonesa japonesa", "Katsuobushi (copos de bonito seco)")),
                     Recipe(name = "Dorayaki", image = R.drawable.recetapplogo, category = "Japón", subcategory1 = "Japón", subcategory2 = "Dorayaki", ingredients = arrayListOf("Harina de trigo", "Huevo", "Azúcar", "Miel", "Pasta de frijol rojo (anko)", "Bicarbonato de sodio")),
-                    Recipe(name = "Silpancho", image = R.drawable.recetapplogo, category = "Bolivia", subcategory1 = "Bolivia", subcategory2 = "Silpancho", ingredients = arrayListOf("Carne de res", "Arroz", "Papa", "Huevo", "Cebolla", "Tomate")),
+                    Recipe(name = "fSilpancho", image = R.drawable.recetapplogo, category = "Bolivia", subcategory1 = "Bolivia", subcategory2 = "Silpancho", ingredients = arrayListOf("Carne de res", "Arroz", "Papa", "Huevo", "Cebolla", "Tomate")),
                     Recipe(name = "Plato Paceño", image = R.drawable.recetapplogo, category = "Bolivia", subcategory1 = "Bolivia", subcategory2 = "Plato Paceño", ingredients = arrayListOf("Arroz", "Papa", "Carne de res", "Chicharrón", "Salsa de maní")),
                     Recipe(name = "Majadito", image = R.drawable.recetapplogo, category = "Bolivia", subcategory1 = "Bolivia", subcategory2 = "Majadito", ingredients = arrayListOf("Arroz", "Carne de res", "Plátano", "Huevo", "Verduras")),
                     Recipe(name = "Sopa de Maní", image = R.drawable.recetapplogo, category = "Bolivia", subcategory1 = "Bolivia", subcategory2 = "Sopa de Maní", ingredients = arrayListOf("Maní", "Carne de res", "Papa", "Fideos", "Verduras")),
-                    Recipe(name = "Pique a lo Macha", image = R.drawable.recetapplogo, category = "Bolivia", subcategory1 = "Bolivia", subcategory2 = "Pique a lo Macho", ingredients = arrayListOf("Carne de res", "Papa", "Cebolla", "Tomate", "Ají rojo")),
+                    Recipe(name = "Pique a lo Macho", image = R.drawable.recetapplogo, category = "Bolivia", subcategory1 = "Bolivia", subcategory2 = "Pique a lo Macho", ingredients = arrayListOf("Carne de res", "Papa", "Cebolla", "Tomate", "Ají rojo")),
                     Recipe(name = "Quiche Lorraine", image = R.drawable.recetapplogo, category = "Francia", subcategory1 = "Francia", subcategory2 = "Quiche Lorraine", ingredients = arrayListOf("Masa quebrada", "Huevo", "Crema de leche", "Bacon", "Queso Gruyère", "Cebolla", "Pimienta")),
                     Recipe(name = "Ratatouille", image = R.drawable.recetapplogo, category = "Francia", subcategory1 = "Francia", subcategory2 = "Ratatouille", ingredients = arrayListOf("Berenjena", "Calabacín", "Pimiento rojo", "Tomate", "Cebolla", "Ajo", "Aceite de oliva", "Hierbas provenzales")),
                     Recipe(name = "Soupe à l'Oignon", image = R.drawable.recetapplogo, category = "Francia", subcategory1 = "Francia", subcategory2 = "Soupe à l'Oignon", ingredients = arrayListOf("Cebolla", "Caldo de carne", "Vino blanco", "Pan", "Queso Gruyère", "Mantequilla", "Harina")),
@@ -181,7 +175,13 @@ class MenuActivity : AppCompatActivity() {
 
             }
         }
-
+        lifecycleScope.launch {
+            val randomRecipe = dbAccess.recipeDao().obtenerRecetaAleatoria()
+            binding.nameRecipe.text = randomRecipe.name
+            binding.imageRecipe.setImageResource(randomRecipe.image)
+            binding.categoryName.text = randomRecipe.category
+            binding.subcategoryName.text = randomRecipe.subcategory1
+        }
 
         //setUpRecyclerView()
     }
