@@ -1,5 +1,6 @@
 package com.example.padresdinamicos
 
+
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -9,7 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.padresdinamicos.databinding.ActivityCategoriesBinding
 import com.example.padresdinamicos.databinding.ActivityMenuBinding
 
-class CategoriesActivity : AppCompatActivity() {
+class CategoriesActivity : BaseActivity() {
     private lateinit var binding: ActivityCategoriesBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

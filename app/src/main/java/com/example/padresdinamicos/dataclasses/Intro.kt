@@ -1,4 +1,4 @@
-package com.example.padresdinamicos
+package com.example.padresdinamicos.dataclasses
 
 data class Intro(
 val fondo: Int,

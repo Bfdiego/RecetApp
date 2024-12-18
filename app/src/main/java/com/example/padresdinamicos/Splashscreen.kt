@@ -1,5 +1,6 @@
 package com.example.padresdinamicos
 
+
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Handler
@@ -10,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class Splashscreen : AppCompatActivity() {
+class Splashscreen : BaseActivity() {
 
     private lateinit var sharedPreferences: SharedPreferences
 
@@ -25,12 +26,12 @@ class Splashscreen : AppCompatActivity() {
             // Verificar si la sesión está activa
             if (sharedPreferences.getBoolean("isLoggedIn", false)) {
                 // Si está logueado, ir a MenuActivity
-                val intent = Intent(this, MenuActivity::class.java)
-                startActivity(intent)
+                val intentMenu = Intent(this, MenuActivity::class.java)
+                startActivity(intentMenu)
             } else {
                 // Si no está logueado, ir a LoginActivity
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
+                val intentBienvenidaActivity = Intent(this,BienvenidaActivity::class.java)
+                startActivity(intentBienvenidaActivity)
             }
             finish()
         }, 4000)

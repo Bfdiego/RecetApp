@@ -1,5 +1,6 @@
 package com.example.padresdinamicos
 
+
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +13,7 @@ import com.example.padresdinamicos.databinding.ActivityRecipeBinding
 import com.example.padresdinamicos.dataclasses.Ingredient
 import com.example.padresdinamicos.dataclasses.Step
 
-class RecipeActivity : AppCompatActivity() {
+class RecipeActivity : BaseActivity() {
     private lateinit var  binding: ActivityRecipeBinding
     private val recyclerIngredientAdapter by lazy { RecyclerIngredientsAdapter() }
     private val recyclerStepAdapter by lazy { RecyclerStepAdapter() }

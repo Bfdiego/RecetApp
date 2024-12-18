@@ -1,5 +1,6 @@
 package com.example.padresdinamicos
 
+
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -14,7 +15,7 @@ import com.example.padresdinamicos.dataclasses.Recipe
 import com.example.padresdinamicos.dataclasses.Subcategory
 import com.google.gson.Gson
 
-class MenuActivity : AppCompatActivity() {
+class MenuActivity : BaseActivity() {
     private lateinit var binding: ActivityMenuBinding
     private val recyclerSubcategoryAdapter by lazy { RecyclerSubcategoryAdapter() }
     private val recyclerRecipeAdapter by lazy { RecyclerRecipeAdapter() }
