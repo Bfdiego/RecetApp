@@ -22,5 +22,11 @@ class CategoriesActivity : AppCompatActivity() {
             val intentMenuActivity = Intent(this, MenuActivity::class.java)
             startActivity(intentMenuActivity)
         }
+
+        binding.cardViewPaises.setOnClickListener {
+            val intentSubcategoriesActivity = Intent(this, SubcategoriesActivity::class.java)
+            startActivity(intentSubcategoriesActivity)
+
+        }
     }
 }

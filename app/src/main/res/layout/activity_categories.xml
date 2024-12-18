@@ -9,7 +9,7 @@
     android:background="@color/greyBlue">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_cat1"
+        android:id="@+id/card_view_paises"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="373:79"
@@ -26,11 +26,11 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_cat2"
+        android:id="@+id/card_view_tipo_de_comida"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="373:79"
-        app:layout_constraintTop_toBottomOf="@id/card_view_cat1"
+        app:layout_constraintTop_toBottomOf="@id/card_view_paises"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
         android:layout_marginTop="40dp"
@@ -43,11 +43,11 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_cat3"
+        android:id="@+id/card_view_estilo_de_alimentacion"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="373:79"
-        app:layout_constraintTop_toBottomOf="@id/card_view_cat2"
+        app:layout_constraintTop_toBottomOf="@id/card_view_tipo_de_comida"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
         android:layout_marginTop="40dp"
@@ -60,11 +60,11 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_cat4"
+        android:id="@+id/card_view_metodo_de_preparacion"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="373:79"
-        app:layout_constraintTop_toBottomOf="@id/card_view_cat3"
+        app:layout_constraintTop_toBottomOf="@id/card_view_estilo_de_alimentacion"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
         android:layout_marginTop="40dp"
@@ -77,11 +77,11 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_cat5"
+        android:id="@+id/card_view_eventos"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="373:79"
-        app:layout_constraintTop_toBottomOf="@id/card_view_cat4"
+        app:layout_constraintTop_toBottomOf="@id/card_view_metodo_de_preparacion"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
         android:layout_marginTop="40dp"
