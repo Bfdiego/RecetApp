@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.padresdinamicos.adapters.RecyclerRecipeAdapter
 import com.example.padresdinamicos.adapters.RecyclerSubcategoryAdapter
 import com.example.padresdinamicos.databinding.ActivityMenuBinding
+import com.example.padresdinamicos.databinding.ActivityUserScreenBinding
 import com.example.padresdinamicos.dataclasses.Recipe
 import com.example.padresdinamicos.dataclasses.Subcategory
 import com.example.padresdinamicos.room.RecipeDatabase
@@ -220,6 +221,11 @@ class MenuActivity : AppCompatActivity() {
             }
         }
 
+        binding.userIcon.setOnClickListener{
+            val intentUserActivity = Intent(this, userScreen::class.java)
+            startActivity(intentUserActivity)
+        }
+
     }
 
 //    fun setUpRecyclerView() {
@@ -414,6 +420,7 @@ class MenuActivity : AppCompatActivity() {
 //            val intentCategory = Intent(this, CategoriesActivity::class.java)
 //            startActivity(intentCategory)
 //        }
+
 //
 //    }
 }
