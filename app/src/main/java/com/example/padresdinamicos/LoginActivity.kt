@@ -24,16 +24,15 @@ class LoginActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        // Inicializar SharedPreferences
+
         sharedPreferences = getSharedPreferences("login_prefs", MODE_PRIVATE)
 
-        // Enlazar vistas
         editTextEmail = findViewById(R.id.edit_text_email)
         editTextPassword = findViewById(R.id.edit_text_password)
         buttonLogin = findViewById(R.id.button_login)
         buttonsignUp = findViewById(R.id.sign_up)
 
-        // Botón de login
+
         buttonLogin.setOnClickListener {
             val email = editTextEmail.text.toString()
             val password = editTextPassword.text.toString()
@@ -47,27 +46,27 @@ class LoginActivity : BaseActivity() {
             }
 
             if (email == savedEmail && password == savedPassword) {
-                // Inicio de sesión exitoso
+
                 Toast.makeText(this, "¡Inicio de sesión exitoso!", Toast.LENGTH_SHORT).show()
 
-                // Guardar el estado de login en SharedPreferences
+
                 val editor = sharedPreferences.edit()
                 editor.putBoolean("isLoggedIn", true) // Usuario loggeado
                 editor.apply()
 
-                // Navegar al menú y limpiar la pila de actividades
+
                 val intent = Intent(this, MenuActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
                 finish()
 
             } else {
-                // Credenciales incorrectas
+
                 Toast.makeText(this, "Email o contraseña incorrectos", Toast.LENGTH_SHORT).show()
             }
         }
 
-        // Botón para ir a RegisterActivity
+        
         buttonsignUp.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)

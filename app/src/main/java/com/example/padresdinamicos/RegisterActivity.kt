@@ -32,34 +32,34 @@ class RegisterActivity : BaseActivity() {
         editTextConfirmPassword = findViewById(R.id.edit_text_confirm_password)
         buttonRegister = findViewById(R.id.button_login)
 
-        // Acción al hacer clic en el botón de registro
+
         buttonRegister.setOnClickListener {
             val email = editTextEmail.text.toString().trim()
             val password = editTextPassword.text.toString().trim()
             val confirmPassword = editTextConfirmPassword.text.toString().trim()
 
-            // Validación de campos vacíos
+
             if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
                 Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Validación de contraseña
+
             if (password != confirmPassword) {
                 Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Guardar las credenciales en SharedPreferences
+            // Guardar las credenciales
             sharedPreferences.edit()
                 .putString("email", email)
                 .putString("password", password)
                 .apply()
 
-            // Confirmación de registro exitoso
+
             Toast.makeText(this, "¡Registro exitoso! Ahora inicie sesión.", Toast.LENGTH_SHORT).show()
 
-            // Navegar de regreso a LoginActivity
+
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()

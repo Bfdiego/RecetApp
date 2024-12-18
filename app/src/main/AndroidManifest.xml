@@ -16,6 +16,9 @@
             android:name=".BienvenidaActivity"
             android:exported="false"/>
         <activity
+            android:name=".userScreen"
+            android:exported="false" />
+        <activity
             android:name=".CategoriesActivity"
             android:exported="false" />
         <activity
@@ -39,7 +42,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
