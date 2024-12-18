@@ -1,5 +1,6 @@
 package com.example.padresdinamicos
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
@@ -11,7 +12,7 @@ import com.example.padresdinamicos.databinding.ActivityCategoriesBinding
 import com.example.padresdinamicos.databinding.ActivityMenuBinding
 import com.example.padresdinamicos.databinding.ActivityUserScreenBinding
 
-class CategoriesActivity : AppCompatActivity() {
+class CategoriesActivity : BaseActivity() {
     private lateinit var binding: ActivityCategoriesBinding
     override fun onCreate(savedInstanceState: Bundle?) {
 

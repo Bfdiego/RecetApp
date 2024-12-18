@@ -12,7 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
 
-class Splashscreen : AppCompatActivity() {
+class Splashscreen : BaseActivity() {
 
     private lateinit var sharedPreferences: SharedPreferences
 
@@ -26,19 +26,19 @@ class Splashscreen : AppCompatActivity() {
             .into(imageView)
 
 
-
+        // Obtener SharedPreferences para verificar la sesión
         sharedPreferences = getSharedPreferences("login_prefs", MODE_PRIVATE)
 
         Handler(Looper.getMainLooper()).postDelayed( {
-
+            // Verificar si la sesión está activa
             if (sharedPreferences.getBoolean("isLoggedIn", false)) {
-
-                val intent = Intent(this, MenuActivity::class.java)
-                startActivity(intent)
+                // Si está logueado, ir a MenuActivity
+                val intentMenu = Intent(this, MenuActivity::class.java)
+                startActivity(intentMenu)
             } else {
-
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
+                // Si no está logueado, ir a LoginActivity
+                val intentBienvenidaActivity = Intent(this,BienvenidaActivity::class.java)
+                startActivity(intentBienvenidaActivity)
             }
             finish()
         }, 4000)

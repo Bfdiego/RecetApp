@@ -3,13 +3,13 @@ package com.example.padresdinamicos
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.padresdinamicos.databinding.ActivityRegisterBinding
 
-
-
-class RegisterActivity : AppCompatActivity() {
+class RegisterActivity : BaseActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var sharedPreferences: SharedPreferences
