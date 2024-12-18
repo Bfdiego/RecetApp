@@ -11,7 +11,7 @@ import com.example.padresdinamicos.dataclasses.Subcategory
 @Dao
 interface RecipeDao {
 
-    @Query("SELECT * FROM Recipe WHERE subcategories LIKE '%' || :subcategoriaName || '%'")
+    @Query("SELECT * FROM Recipe WHERE subcategory1 = :subcategoriaName OR subcategory2 = :subcategoriaName")
     suspend fun obtenerPorSubcategoria(subcategoriaName: String): List<Recipe>
 
     @Query("SELECT * FROM Recipe")
@@ -20,6 +20,11 @@ interface RecipeDao {
     @Query("SELECT * FROM Recipe WHERE id =:id")
     suspend fun obtenerPorId(id: String): Recipe
 
+    @Query("SELECT * FROM Recipe WHERE category =:category")
+    suspend fun obtenerPorCategoria(category: String): List<Recipe>
+
+    @Query("SELECT * FROM Recipe WHERE name =:name")
+    suspend fun obtenerPorNombre(name: String): Recipe
     @Update
     suspend fun update(recipe: Recipe)
 

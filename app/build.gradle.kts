@@ -2,7 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
-    id("kotlin-kapt")
+    kotlin("kapt")
 }
 
 android {
@@ -41,6 +41,9 @@ android {
 }
 
 dependencies {
+
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")  // o versión más reciente
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")  // o versión más reciente
 
     implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.29")
     implementation("androidx.core:core-splashscreen:1.0.1")

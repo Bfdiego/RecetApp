@@ -9,7 +9,8 @@ data class Recipe(
     val name: String,
     val image: Int,
     val category: String,
-    val subcategories: List<String>,
+    val subcategory1: String,
+    val subcategory2: String,
     val ingredients: List<String>
 )
 

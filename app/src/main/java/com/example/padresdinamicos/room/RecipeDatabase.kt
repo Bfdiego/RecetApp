@@ -5,18 +5,19 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.padresdinamicos.dataclasses.Recipe
+import com.example.padresdinamicos.dataclasses.Subcategory
 
 @Database(
     entities = [Recipe::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(Converter::class)
 abstract class RecipeDatabase: RoomDatabase() {
     abstract fun recipeDao(): RecipeDao
-    abstract fun subcategoryDao(): SubcategoryDao
-
     companion object{
         @Volatile
         private var INSTANCE: RecipeDatabase? = null
@@ -28,11 +29,12 @@ abstract class RecipeDatabase: RoomDatabase() {
                         context,
                         RecipeDatabase::class.java,
                         "Recipes"
-                    )
+                    ).fallbackToDestructiveMigration()
                     .build()
                 INSTANCE = room
                 room
             }
         }
+
     }
 }
