@@ -2,6 +2,7 @@ package com.example.padresdinamicos.dataclasses
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity
 data class Recipe(
@@ -11,6 +12,6 @@ data class Recipe(
     val category: String,
     val subcategory1: String,
     val subcategory2: String,
-    val ingredients: List<String>
-)
+    val ingredients: ArrayList<String>
+): Serializable
 

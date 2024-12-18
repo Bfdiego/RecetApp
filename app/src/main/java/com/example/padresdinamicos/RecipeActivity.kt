@@ -1,15 +1,18 @@
 package com.example.padresdinamicos
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.padresdinamicos.MenuActivity.Companion.ID_PASO_RECETA
 import com.example.padresdinamicos.adapters.RecyclerIngredientsAdapter
 import com.example.padresdinamicos.adapters.RecyclerStepAdapter
 import com.example.padresdinamicos.databinding.ActivityRecipeBinding
 import com.example.padresdinamicos.dataclasses.Ingredient
+import com.example.padresdinamicos.dataclasses.Recipe
 import com.example.padresdinamicos.dataclasses.Step
 
 class RecipeActivity : AppCompatActivity() {
@@ -25,11 +28,18 @@ class RecipeActivity : AppCompatActivity() {
         setContentView(view)
         setUpRecyclerView()
         setUpRecyclerView2()
+
+        binding.buttonBack.setOnClickListener {
+            finish()
+        }
     }
 
+
     fun setUpRecyclerView() {
+        val recipe: Recipe? = intent.getSerializableExtra(ID_PASO_RECETA) as? Recipe
+        val nameRecipe = recipe?.name
         val listaDatos = mutableListOf(
-            Ingredient(name = "Tomate", amount = "12"),
+            Ingredient(name = "$nameRecipe", amount = "12"),
             Ingredient(name = "Cebolla", amount = "1"),
             Ingredient(name = "Zanahoria", amount = "1"),
             Ingredient(name = "Papa", amount = "1"),
