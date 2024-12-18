@@ -18,7 +18,7 @@ import com.example.padresdinamicos.dataclasses.Recipe
 import com.example.padresdinamicos.dataclasses.Step
 import kotlin.random.Random
 
-class RecipeActivity : AppCompatActivity() {
+class RecipeActivity : BaseActivity() {
     private lateinit var  binding: ActivityRecipeBinding
     private val recyclerIngredientAdapter by lazy { RecyclerIngredientsAdapter() }
     private val recyclerStepAdapter by lazy { RecyclerStepAdapter() }
@@ -36,8 +36,6 @@ class RecipeActivity : AppCompatActivity() {
             finish()
         }
     }
-
-
 
 
     fun setUpRecyclerView() {
