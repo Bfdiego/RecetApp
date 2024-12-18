@@ -16,6 +16,7 @@ import com.example.padresdinamicos.databinding.ActivityRecipeBinding
 import com.example.padresdinamicos.dataclasses.Ingredient
 import com.example.padresdinamicos.dataclasses.Recipe
 import com.example.padresdinamicos.dataclasses.Step
+import kotlin.random.Random
 
 class RecipeActivity : AppCompatActivity() {
     private lateinit var  binding: ActivityRecipeBinding
@@ -37,19 +38,8 @@ class RecipeActivity : AppCompatActivity() {
     }
 
 
-    fun convertirIngredientes(ingredients: List<String>): List<Ingredient> {
-        return ingredients.mapNotNull { ingredient ->
-            // Validamos que el string esté en el formato correcto
-            val partes = ingredient.split("-")
-            if (partes.size == 2) {
-                // Si el formato es válido, creamos un objeto Ingredient
-                Ingredient(name = partes[0].trim(), amount = partes[1].trim())
-            } else {
-                // Si el formato no es válido, devolvemos null
-                null
-            }
-        }
-    }
+
+
     fun setUpRecyclerView() {
         val recipe: Recipe? = intent.getSerializableExtra(ID_PASO_RECETA) as? Recipe
         val nameRecipe = recipe?.name
@@ -61,9 +51,14 @@ class RecipeActivity : AppCompatActivity() {
 
         binding.recyclerViewIngredients.visibility = View.VISIBLE
 
-        val listaIngredientes = convertirIngredientes(recipe?.ingredients ?: emptyList())
+        val listaIngredientes: ArrayList<String> = recipe?.ingredients ?: arrayListOf()
+        val listaIngredientes2: MutableList<Ingredient> = mutableListOf()
+        for (i in 0 .. listaIngredientes.size-1) {
+            val random = Random
+            listaIngredientes2.add(Ingredient(name = listaIngredientes[i], amount = "${random.nextInt(1, 10)}"))
+        }
 
-        recyclerIngredientAdapter.addDataToList(listaIngredientes)
+        recyclerIngredientAdapter.addDataToList(listaIngredientes2)
 
         binding.recyclerViewIngredients.apply {
             layoutManager =

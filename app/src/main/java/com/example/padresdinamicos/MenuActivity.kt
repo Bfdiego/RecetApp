@@ -181,7 +181,14 @@ class MenuActivity : AppCompatActivity() {
             binding.imageRecipe.setImageResource(randomRecipe.image)
             binding.categoryName.text = randomRecipe.category
             binding.subcategoryName.text = randomRecipe.subcategory1
+
+            binding.buttonSeeRecipe.setOnClickListener {
+                val intentRecipe = Intent(this@MenuActivity, RecipeActivity::class.java)
+                intentRecipe.putExtra(ID_PASO_RECETA, randomRecipe)
+                startActivity(intentRecipe)
+            }
         }
+
 
         //setUpRecyclerView()
     }
