@@ -11,7 +11,9 @@
         android:id="@+id/button_view_recipe"
         android:layout_width="140dp"
         android:layout_height="210dp"
-        android:src="@color/black"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/recetapplogo"
+        android:background="@null"/>
     
     <TextView
         android:id="@+id/text_view_name"

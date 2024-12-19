@@ -14,6 +14,7 @@ interface RecipeDao {
     @Query("SELECT * FROM Recipe WHERE subcategory1 = :subcategoriaName OR subcategory2 = :subcategoriaName")
     suspend fun obtenerPorSubcategoria(subcategoriaName: String): List<Recipe>
 
+
     @Query("SELECT * FROM Recipe")
     suspend fun obtenerTodasLasRecetas(): List<Recipe>
 
@@ -23,11 +24,18 @@ interface RecipeDao {
     @Query("SELECT * FROM Recipe WHERE category =:category")
     suspend fun obtenerPorCategoria(category: String): List<Recipe>
 
-    @Query("SELECT * FROM Recipe WHERE name =:name")
-    suspend fun obtenerPorNombre(name: String): Recipe
+    @Query("SELECT * FROM recipe WHERE LOWER(name) LIKE LOWER(:query)")
+    suspend fun obtenerPorNombre(query: String): List<Recipe>
 
     @Query("SELECT * FROM Recipe ORDER BY RANDOM() LIMIT 1")
     suspend fun obtenerRecetaAleatoria(): Recipe
+
+    @Query("SELECT * FROM Recipe WHERE isFavorite = 1")
+    suspend fun obtenerRecetasFavoritas(): List<Recipe>
+
+    @Query("UPDATE Recipe SET isFavorite = :isFavorite WHERE id = :id")
+    suspend fun actualizarFavorito(id: Int, isFavorite: Boolean)
+
 
     @Update
     suspend fun update(recipe: Recipe)

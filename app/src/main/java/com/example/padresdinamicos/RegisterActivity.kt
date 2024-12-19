@@ -3,15 +3,15 @@ package com.example.padresdinamicos
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.padresdinamicos.databinding.ActivityRegisterBinding
 
+class RegisterActivity : BaseActivity() {
 
-
-class RegisterActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityRegisterBinding // Usamos View Binding
+    private lateinit var binding: ActivityRegisterBinding
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +21,7 @@ class RegisterActivity : AppCompatActivity() {
 
 
         sharedPreferences = getSharedPreferences("login_prefs", MODE_PRIVATE)
+
 
        binding.buttonLogin.setOnClickListener {
             val email = binding.editTextEmail.text.toString().trim()
@@ -76,4 +77,5 @@ class RegisterActivity : AppCompatActivity() {
     private fun isValidEmail(email: String): Boolean {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
+
 }

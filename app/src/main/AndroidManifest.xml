@@ -13,13 +13,25 @@
         android:theme="@style/Theme.PadresDinamicos"
         tools:targetApi="31">
         <activity
+            android:name=".SearchRecipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GuardadoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateRecipeActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".CategoriesActivity"
+            android:name=".BienvenidaActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".CategoriesActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
@@ -32,6 +44,12 @@
             android:exported="false" />
         <activity
             android:name=".RecipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".Splashscreen"
