@@ -10,5 +10,4 @@ data class Step(
     var name: String,
     var description: String,
     val recipe: String
-
 )

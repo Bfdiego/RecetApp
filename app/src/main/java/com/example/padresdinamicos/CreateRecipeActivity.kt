@@ -80,7 +80,7 @@ class CreateRecipeActivity : AppCompatActivity() {
             // Recoger los pasos
             val stepsList = recyclerAdapter2.getAllSteps()
             val steps = stepsList.mapIndexed { index, step ->
-                Step(index + 1, (index + 1).toString(), step.name, step.description, "$recipeName")
+                Step(index + 1,(index + 1).toString(), step.name, step.description, recipeName)
             }
 
             // Crear la receta

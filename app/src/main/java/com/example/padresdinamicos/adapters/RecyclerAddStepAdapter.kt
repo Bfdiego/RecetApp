@@ -40,7 +40,6 @@ class RecyclerAddStepAdapter : RecyclerView.Adapter<RecyclerAddStepAdapter.StepV
             // Actualiza el número del paso
             binding.textNumberStep.text = stepNumber.toString()
 
-            // Rellenar los EditText con los datos actuales del Step
             binding.editTextNameStep.setText(step.name)
             binding.editTextDescriptionStep.setText(step.description)
 
