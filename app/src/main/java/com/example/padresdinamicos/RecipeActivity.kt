@@ -70,7 +70,7 @@ class RecipeActivity : BaseActivity() {
             Step(number = "1", name = "Cortar", description = "Cortar todo"),
             Step(number = "2", name = "Cortar", description = "Cortar todo"),
             Step(number = "3", name = "Cortar", description = "Cortar todo"),
-            Step(number = "4", name = "Cortar", description = "Cortar todo"),)
+            Step(number = "4", name = "Cortar", description = "Cortar todo"))
 
         recyclerStepAdapter.addDataToList(listaDatos)
 
