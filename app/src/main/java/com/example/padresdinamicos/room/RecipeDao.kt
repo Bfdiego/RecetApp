@@ -19,7 +19,7 @@ interface RecipeDao {
     suspend fun obtenerTodasLasRecetas(): List<Recipe>
 
     @Query("SELECT * FROM Recipe WHERE id =:id")
-    suspend fun obtenerPorId(id: String): Recipe
+    suspend fun obtenerPorId(id: Int): Recipe
 
     @Query("SELECT * FROM Recipe WHERE category =:category")
     suspend fun obtenerPorCategoria(category: String): List<Recipe>
@@ -36,9 +36,11 @@ interface RecipeDao {
     @Query("UPDATE Recipe SET isFavorite = :isFavorite WHERE id = :id")
     suspend fun actualizarFavorito(id: Int, isFavorite: Boolean)
 
-
     @Update
     suspend fun update(recipe: Recipe)
+
+
+
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(recipe: Recipe)

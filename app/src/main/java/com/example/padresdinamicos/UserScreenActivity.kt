@@ -9,6 +9,7 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.addTextChangedListener
 import com.example.padresdinamicos.databinding.ActivityUserScreenBinding
 
 class UserScreenActivity : AppCompatActivity() {
@@ -22,12 +23,11 @@ class UserScreenActivity : AppCompatActivity() {
         binding = ActivityUserScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         sharedPreferences = getSharedPreferences("login_prefs", MODE_PRIVATE)
         editor = sharedPreferences.edit()
 
         val options = arrayOf("Chefcito", "Chefcita")
-        val images = arrayOf(R.drawable.chefsita, R.drawable.chefsito)
+        val images = arrayOf(R.drawable.chefsito, R.drawable.chefsita)
 
 
         val savedImageIndex = sharedPreferences.getInt("selected_image_index", 0)
@@ -42,6 +42,7 @@ class UserScreenActivity : AppCompatActivity() {
         val savedUserName = sharedPreferences.getString("username", "")
         val savedEmail = sharedPreferences.getString("email", "")
         val savedPassword = sharedPreferences.getString("password", "")
+
 
         binding.editTextUser.setText(savedUserName)
         binding.editTextCorreo.setText(savedEmail)
@@ -69,7 +70,7 @@ class UserScreenActivity : AppCompatActivity() {
         }
 
 
-        binding.atras.setOnClickListener {
+        binding.buttonBack.setOnClickListener {
             navigateToMenu()
         }
 
@@ -129,6 +130,29 @@ class UserScreenActivity : AppCompatActivity() {
             }
             binding.editTextPassword.isEnabled = false
             binding.editpassword.isEnabled = true
+        }
+        binding.menuIcon.setOnClickListener {
+            val intentMenuActivity = Intent(this, MenuActivity::class.java)
+            startActivity(intentMenuActivity)
+        }
+
+        binding.buttonCreateRecipe.setOnClickListener{
+            val intentCreateRecipe = Intent(this, CreateRecipeActivity::class.java)
+            startActivity(intentCreateRecipe)
+        }
+
+        binding.categoryIcon.setOnClickListener {
+            val intentCategory = Intent(this, CategoriesActivity::class.java)
+            startActivity(intentCategory)
+        }
+
+        binding.userIcon.setOnClickListener {
+            val intentUser = Intent(this, UserScreenActivity::class.java)
+            startActivity(intentUser)
+        }
+        binding.recetIcon.setOnClickListener {
+            val intentGuardado = Intent(this, GuardadoActivity::class.java)
+            startActivity(intentGuardado)
         }
     }
 

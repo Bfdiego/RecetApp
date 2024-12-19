@@ -4,10 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="0dp"
     tools:context=".MenuActivity">
-
-
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -15,6 +13,7 @@
         app:layout_constraintTop_toBottomOf="@id/constraint_layout_top"
         app:layout_constraintBottom_toTopOf="@id/card_view_down"
         android:orientation="vertical"
+        android:fillViewport="true"
         android:background="@color/greyBlue">
         
         <LinearLayout
@@ -84,7 +83,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <ImageButton
-                    android:id="@+id/button_favorite"
+                    android:id="@+id/buttonFavorite"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     app:layout_constraintTop_toTopOf="@id/button_see_recipe"
@@ -104,11 +103,21 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view_subcategories"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"/>
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_subcategories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
@@ -170,8 +179,6 @@
     <androidx.cardview.widget.CardView
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:src="@drawable/add"
-        android:background="@color/darkRed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/card_view_down"
@@ -179,9 +186,13 @@
         android:layout_marginTop="-25dp">
 
         <ImageButton
+            android:src="@drawable/add"
             android:id="@+id/button_create_recipe"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="@color/darkRed"
+            />
+
 
     </androidx.cardview.widget.CardView>
 

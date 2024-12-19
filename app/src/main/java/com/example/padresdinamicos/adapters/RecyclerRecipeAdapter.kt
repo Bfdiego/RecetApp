@@ -18,7 +18,6 @@ class RecyclerRecipeAdapter :
     private val listaDatos = mutableListOf<Recipe>()
     private var context: Context? = null
 
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -36,13 +35,10 @@ class RecyclerRecipeAdapter :
     override fun onBindViewHolder(holder: EjemploViewHolder, position: Int) {
         holder.binding(listaDatos[position])
     }
-
     override fun getItemCount(): Int = listaDatos.size
-
     interface OnRecipeClickListener {
         fun onRecipeClick(recipe: Recipe)
     }
-
     inner class EjemploViewHolder(private val binding: ItemRecipesViewBinding) :
         RecyclerView.ViewHolder(binding.root)  {
         fun binding(data: Recipe) {
@@ -53,7 +49,6 @@ class RecyclerRecipeAdapter :
             }
             binding.buttonViewRecipe.setImageResource(data.image)
             binding.textViewName.text = data.name
-
         }
     }
 
