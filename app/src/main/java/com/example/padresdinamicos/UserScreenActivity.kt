@@ -26,7 +26,7 @@ class UserScreenActivity : AppCompatActivity() {
         sharedPreferences = getSharedPreferences("login_prefs", MODE_PRIVATE)
         editor = sharedPreferences.edit()
 
-        val options = arrayOf("Foto de perfil 1", "Foto de perfil 2")
+        val options = arrayOf("Chefcito", "Chefcita")
         val images = arrayOf(R.drawable.chefsita, R.drawable.chefsito)
 
 
