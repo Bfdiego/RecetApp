@@ -27,7 +27,7 @@ class UserScreenActivity : AppCompatActivity() {
         editor = sharedPreferences.edit()
 
         val options = arrayOf("Chefcito", "Chefcita")
-        val images = arrayOf(R.drawable.chefsita, R.drawable.chefsito)
+        val images = arrayOf(R.drawable.chefsito, R.drawable.chefsita)
 
 
         val savedImageIndex = sharedPreferences.getInt("selected_image_index", 0)
