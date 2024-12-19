@@ -70,7 +70,7 @@ class UserScreenActivity : AppCompatActivity() {
         }
 
 
-        binding.atras.setOnClickListener {
+        binding.buttonBack.setOnClickListener {
             navigateToMenu()
         }
 

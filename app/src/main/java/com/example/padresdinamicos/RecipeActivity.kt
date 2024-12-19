@@ -596,27 +596,42 @@ class RecipeActivity : BaseActivity() {
             val listaDatos = dbAccess.stepDao().obtenerPasosPorReceta(name)
             recyclerStepAdapter.addDataToList(listaDatos)
 
-        binding.recyclerViewProcess.apply {
-            layoutManager =
-                LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-            adapter = recyclerStepAdapter
+            binding.recyclerViewProcess.apply {
+                layoutManager =
+                    LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+                adapter = recyclerStepAdapter
+            }
         }
     }
-    private fun toggleFavorite() {
-        currentRecipe?.let { recipe ->
-            recipe.isFavorite = !recipe.isFavorite  // Invierte el estado
-            setFavoriteIcon(recipe.isFavorite)     // Actualiza el ícono visualmente
 
-            // Aquí puedes guardar en Room si ya lo implementaste
-            Log.d("RecipeActivity", "Receta '${recipe.name}' favorita: ${recipe.isFavorite}")
+    private fun toggleFavorite() {
+        val currentRecipe = intent.getSerializableExtra(ID_PASO_RECETA) as Recipe
+
+        val newFavoriteStatus = !currentRecipe.isFavorite
+        currentRecipe.isFavorite = newFavoriteStatus
+
+        lifecycleScope.launch {
+            dbAccess.recipeDao().actualizarFavorito(currentRecipe.id, newFavoriteStatus)
+            setFavoriteIcon(newFavoriteStatus)
         }
     }
+
     private fun setFavoriteIcon(isFavorite: Boolean) {
         if (isFavorite) {
             binding.buttonFavorite.setImageResource(R.drawable.favoriterojo)  // Ícono marcado
         } else {
             binding.buttonFavorite.setImageResource(R.drawable.favorite) // Ícono sin marcar
         }
-
     }
+
+    private fun toggleFavorite2() {
+        val currentRecipe = intent.getSerializableExtra(ID_PASO_RECETA) as Recipe
+
+        lifecycleScope.launch {
+            val updatedRecipe = dbAccess.recipeDao().obtenerPorId(currentRecipe.id)
+            setFavoriteIcon(updatedRecipe.isFavorite)
+        }
+    }
+
+
 }
