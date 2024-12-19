@@ -12,6 +12,7 @@ import com.example.padresdinamicos.dataclasses.Recipe
 import com.example.padresdinamicos.dataclasses.Subcategory
 import com.example.padresdinamicos.room.RecipeDatabase
 import com.example.padresdinamicos.room.RecipeDatabase.Companion.getDatabase
+import com.google.gson.Gson
 import kotlinx.coroutines.launch
 
 class MenuActivity : BaseActivity() {
@@ -178,6 +179,7 @@ class MenuActivity : BaseActivity() {
                     }
                 }
                 setUp()
+
             } else {
                 lifecycleScope.launch {
                     lifecycleScope.launch {

@@ -62,6 +62,5 @@ class CategoriesActivity : BaseActivity() {
             intentEventosActivity.putExtra(ID_PASO_SUBCATEGORIA, "Eventos")
             startActivity(intentEventosActivity)
         }
-
     }
 }
