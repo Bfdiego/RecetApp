@@ -573,11 +573,12 @@ class RecipeActivity : BaseActivity() {
         binding.recyclerViewIngredients.visibility = View.VISIBLE
         setFavoriteIcon(recipe?.isFavorite ?: false)
 
+        val listaAmount = recipe?.amount ?: arrayListOf()
         val listaIngredientes: ArrayList<String> = recipe?.ingredients ?: arrayListOf()
         val listaIngredientes2: MutableList<Ingredient> = mutableListOf()
         for (i in 0 .. listaIngredientes.size-1) {
             val random = Random
-            listaIngredientes2.add(Ingredient(name = listaIngredientes[i], amount = "${random.nextInt(1, 10)}"))
+            listaIngredientes2.add(Ingredient(name = listaIngredientes[i], amount = listaAmount[i]))
         }
 
         recyclerIngredientAdapter.addDataToList(listaIngredientes2)
