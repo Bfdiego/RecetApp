@@ -12,7 +12,7 @@ import com.example.padresdinamicos.databinding.ActivitySearchRecipeBinding
 import com.example.padresdinamicos.room.RecipeDatabase
 import kotlinx.coroutines.launch
 
-class SearchRecipeActivity : AppCompatActivity() {
+class SearchRecipeActivity : BaseActivity() {
     private lateinit var binding: ActivitySearchRecipeBinding
     private lateinit var recyclerRecipe: RecyclerRecipesSearchedAdapter
     private lateinit var dbAccess : RecipeDatabase

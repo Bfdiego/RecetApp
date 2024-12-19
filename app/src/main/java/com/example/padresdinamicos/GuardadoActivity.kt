@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.padresdinamicos.databinding.ActivityGuardadoBinding
 
-class GuardadoActivity : AppCompatActivity() {
+class GuardadoActivity : BaseActivity() {
     private lateinit var binding: ActivityGuardadoBinding // Declaración del binding
 
     override fun onCreate(savedInstanceState: Bundle?) {

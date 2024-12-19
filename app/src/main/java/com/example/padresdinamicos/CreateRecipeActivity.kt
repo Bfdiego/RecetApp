@@ -12,7 +12,7 @@ import com.example.padresdinamicos.adapters.RecyclerAddIngredientAdapter
 import com.example.padresdinamicos.databinding.ActivityCreateRecipeBinding
 import com.example.padresdinamicos.dataclasses.Ingredient
 
-class CreateRecipeActivity : AppCompatActivity() {
+class CreateRecipeActivity : BaseActivity() {
     private lateinit var binding: ActivityCreateRecipeBinding
     private lateinit var recyclerAdapter: RecyclerAddIngredientAdapter
 

@@ -32,6 +32,8 @@
             android:id="@+id/button_exit"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:src="@drawable/back"
+            android:background="@color/transparent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_margin="5dp"
             app:layout_constraintDimensionRatio="1:1"/>
@@ -194,7 +196,10 @@
                 <ImageButton
                     android:id="@+id/button_add_ingredient"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    android:src="@drawable/add2"
+                    android:background="@color/darkRed"
+                    />
             </androidx.cardview.widget.CardView>
 
             <TextView
@@ -236,7 +241,10 @@
                 <ImageButton
                     android:id="@+id/button_add_paso"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    android:src="@drawable/add2"
+                    android:background="@color/darkRed"
+                    />
             </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
