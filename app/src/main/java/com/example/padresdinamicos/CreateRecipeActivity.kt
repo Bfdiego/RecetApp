@@ -62,6 +62,7 @@ class CreateRecipeActivity : BaseActivity() {
             val subcategory2 = binding.editTextSubcategory2.text.toString()
             val recipeName = binding.editTextName.text.toString()
             val difficulty = binding.actionBarSpinner.selectedItem.toString()
+            val quantity = binding.editTextPeople.text.toString()
             val time = binding.editTextTime.text.toString()  // Si tienes un EditText para el tiempo
 
             // Recoger los ingredientes
@@ -95,7 +96,7 @@ class CreateRecipeActivity : BaseActivity() {
                 isCreatedByUser = true,
                 dificulty = difficulty,
                 time = time,
-                quantity = "",
+                quantity = quantity,
                 amount = listaIngredientes2
             )
 

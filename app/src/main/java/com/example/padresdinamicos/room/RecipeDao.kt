@@ -33,6 +33,9 @@ interface RecipeDao {
     @Query("SELECT * FROM Recipe WHERE isFavorite = 1")
     suspend fun obtenerRecetasFavoritas(): List<Recipe>
 
+    @Query("SELECT * FROM Recipe WHERE isCreatedByUser = 1")
+    suspend fun obtenerRecetasCreadasPorElUsuario(): List<Recipe>
+
     @Query("UPDATE Recipe SET isFavorite = :isFavorite WHERE id = :id")
     suspend fun actualizarFavorito(id: Int, isFavorite: Boolean)
 

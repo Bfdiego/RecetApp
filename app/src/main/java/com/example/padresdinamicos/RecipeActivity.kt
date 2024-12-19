@@ -565,10 +565,14 @@ class RecipeActivity : BaseActivity() {
         val recipe: Recipe? = intent.getSerializableExtra(ID_PASO_RECETA) as? Recipe
         currentRecipe = recipe
         val nameRecipe = recipe?.name
+
         binding.recipeName.text = nameRecipe
         binding.textCategory.text = recipe?.category
         binding.textSubcategory1.text = recipe?.subcategory1
         binding.textSubcategory2.text = recipe?.subcategory2
+        binding.textTime.text = recipe?.time
+        binding.textDifficulty.text = recipe?.dificulty
+        binding.textPeople.text = recipe?.quantity
         binding.imageRecipe.setImageResource(recipe?.image ?: R.drawable.lasagna)
         binding.recyclerViewIngredients.visibility = View.VISIBLE
         setFavoriteIcon(recipe?.isFavorite ?: false)

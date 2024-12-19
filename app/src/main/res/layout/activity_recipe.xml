@@ -115,11 +115,13 @@
                     app:layout_constraintTop_toBottomOf="@id/text_category_1"/>
 
                 <TextView
+                    android:id="@+id/text_people"
                     android:layout_width="50dp"
                     android:layout_height="40dp"
                     android:text=""
                     android:textColor="@color/white"
-                    android:textSize="20sp"
+                    android:textSize="10sp"
+                    android:gravity="center"
                     app:layout_constraintStart_toEndOf="@id/image_people"
                     app:layout_constraintTop_toTopOf="@id/image_people"/>
 
@@ -132,11 +134,13 @@
                     app:layout_constraintTop_toBottomOf="@id/text_category_2"/>
 
                 <TextView
+                    android:id="@+id/text_time"
                     android:layout_width="50dp"
                     android:layout_height="40dp"
                     android:text=""
                     android:textColor="@color/white"
-                    android:textSize="20sp"
+                    android:textSize="10sp"
+                    android:gravity="center"
                     app:layout_constraintStart_toEndOf="@id/image_time"
                     app:layout_constraintTop_toTopOf="@id/image_time"/>
 
@@ -149,11 +153,13 @@
                     app:layout_constraintTop_toBottomOf="@id/text_category_3"/>
 
                 <TextView
+                    android:id="@+id/text_difficulty"
                     android:layout_width="75dp"
                     android:layout_height="40dp"
                     android:text=""
                     android:textColor="@color/white"
-                    android:textSize="20sp"
+                    android:textSize="10sp"
+                    android:gravity="center"
                     app:layout_constraintStart_toEndOf="@id/image_difficulty"
                     app:layout_constraintTop_toTopOf="@id/image_difficulty"/>
 

@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.padresdinamicos.adapters.RecyclerFavoAdapter
 import com.example.padresdinamicos.adapters.RecyclerRecipeAdapter
 import com.example.padresdinamicos.databinding.ActivityMisRecetasBinding
 import com.example.padresdinamicos.room.RecipeDatabase
@@ -11,7 +12,7 @@ import kotlinx.coroutines.launch
 
 class MisRecetasActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMisRecetasBinding
-    private lateinit var recyclerAdapter: RecyclerRecipeAdapter
+    private lateinit var recyclerAdapter: RecyclerFavoAdapter
     private lateinit var dbAccess: RecipeDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +20,7 @@ class MisRecetasActivity : AppCompatActivity() {
         binding = ActivityMisRecetasBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        recyclerAdapter = RecyclerRecipeAdapter() // Adapter para las recetas
+        recyclerAdapter = RecyclerFavoAdapter()
         dbAccess = RecipeDatabase.getDatabase(this)
 
         binding.recyclerViewMisRecetas.layoutManager = LinearLayoutManager(this)
@@ -34,7 +35,7 @@ class MisRecetasActivity : AppCompatActivity() {
     private fun loadRecipes() {
         lifecycleScope.launch {
             val recipes = dbAccess.recipeDao()
-                .obtenerTodasLasRecetas()
+                .obtenerRecetasCreadasPorElUsuario()
             recyclerAdapter.addDataToList(recipes)
         }
     }

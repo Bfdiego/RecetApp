@@ -3,4 +3,5 @@
     <string name="categoria">Categoria</string>
     <string name="preparacion">Preparación</string>
     <string name="ingredientes">Ingredientes</string>
+    <string name="recetas_favoritas">Recetas Favoritas</string>
 </resources>

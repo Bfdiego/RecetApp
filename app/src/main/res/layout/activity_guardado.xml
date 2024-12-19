@@ -92,7 +92,6 @@
         android:id="@+id/card_view_down"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/white"
         app:cardCornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="542:100">
@@ -100,7 +99,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/menu_bar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/white">
 
 
             <ImageButton
