@@ -32,6 +32,11 @@ class CategoriesActivity : BaseActivity() {
             startActivity(intentUserActivity)
         }
 
+        binding.buttonCreateRecipe.setOnClickListener{
+            val intentCreateRecipe = Intent(this, CreateRecipeActivity::class.java)
+            startActivity(intentCreateRecipe)
+        }
+
         binding.categoryPaises.setOnClickListener{
             val intentPaisesActivity = Intent(this, CategoryActivity::class.java)
             intentPaisesActivity.putExtra(ID_PASO_SUBCATEGORIA, "Paises")
