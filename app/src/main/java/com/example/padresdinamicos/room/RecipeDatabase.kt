@@ -8,16 +8,19 @@ import androidx.room.TypeConverters
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.padresdinamicos.dataclasses.Recipe
+import com.example.padresdinamicos.dataclasses.Step
 import com.example.padresdinamicos.dataclasses.Subcategory
 
 @Database(
-    entities = [Recipe::class],
+    entities = [Recipe::class, Step::class],
     version = 4,
     exportSchema = false
 )
 @TypeConverters(Converter::class)
 abstract class RecipeDatabase: RoomDatabase() {
     abstract fun recipeDao(): RecipeDao
+    abstract fun stepDao(): StepDao
+
     companion object{
         @Volatile
         private var INSTANCE: RecipeDatabase? = null

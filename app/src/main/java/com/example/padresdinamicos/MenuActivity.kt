@@ -12,6 +12,7 @@ import com.example.padresdinamicos.dataclasses.Recipe
 import com.example.padresdinamicos.dataclasses.Subcategory
 import com.example.padresdinamicos.room.RecipeDatabase
 import com.example.padresdinamicos.room.RecipeDatabase.Companion.getDatabase
+import com.google.gson.Gson
 import kotlinx.coroutines.launch
 
 class MenuActivity : BaseActivity() {
@@ -155,11 +156,11 @@ class MenuActivity : BaseActivity() {
                     Recipe(name = "Ensalada César", image = R.drawable.ensaladacesar, category = "Evento", subcategory1 = "Picnic", subcategory2 = "Ensalada César", ingredients = arrayListOf("Manzanas", "Masa para tarta", "Azúcar", "Canela", "Mantequilla")),
                     Recipe(name = "Wraps de Pollo", image = R.drawable.wrapdepollo, category = "Evento", subcategory1 = "Picnic", subcategory2 = "Wraps de Pollo", ingredients = arrayListOf("Pollo a la parrilla", "Tortillas", "Lechuga", "Tomate", "Mayonesa", "Aguacate")),
                     Recipe(name = "Lemonade", image = R.drawable.lemonade, category = "Evento", subcategory1 = "Picnic", subcategory2 = "Lemonade", ingredients = arrayListOf("Limón", "Agua", "Azúcar", "Hielo")),
-                    Recipe(name = "Cocteles Variados", image = R.drawable.coctelesvariados, category = "Evento", subcategory1 = "Fiesta de Año Nuevo", subcategory2 = "Bebidas", ingredients = arrayListOf("Vodka", "Ron", "Ginebra", "Jugo de naranja", "Hielo")),
-                    Recipe(name = "Canapés", image = R.drawable.canapes, category = "Evento", subcategory1 = "Fiesta de Año Nuevo", subcategory2 = "Canapés", ingredients = arrayListOf("Pan de canapé", "Queso crema", "Salmón ahumado", "Caviar", "Pepino")),
-                    Recipe(name = "Mini Quiches", image = R.drawable.miniquiches, category = "Evento", subcategory1 = "Fiesta de Año Nuevo", subcategory2 = "Canapés", ingredients = arrayListOf("Masa para quiche", "Huevos", "Queso", "Espinacas", "Bacon")),
-                    Recipe(name = "Tarta de Santiago", image = R.drawable.tartadesantiago, category = "Evento", subcategory1 = "Fiesta de Año Nuevo", subcategory2 = "Canapés", ingredients = arrayListOf("Almendras", "Huevo", "Azúcar", "Limón", "Harina")),
-                    Recipe(name = "Fondue de Chocolate", image = R.drawable.fonduedechocolate, category = "Evento", subcategory1 = "Fiesta de Año Nuevo", subcategory2 = "Canapés", ingredients = arrayListOf("Chocolate negro", "Crema de leche", "Frutas", "Malvaviscos"))
+                    Recipe(name = "Cocteles Variados", image = R.drawable.coctelesvariados, category = "Evento", subcategory1 = "Año nuevo", subcategory2 = "Bebidas", ingredients = arrayListOf("Vodka", "Ron", "Ginebra", "Jugo de naranja", "Hielo")),
+                    Recipe(name = "Canapés", image = R.drawable.canapes, category = "Evento", subcategory1 = "Año nuevo", subcategory2 = "Canapés", ingredients = arrayListOf("Pan de canapé", "Queso crema", "Salmón ahumado", "Caviar", "Pepino")),
+                    Recipe(name = "Mini Quiches", image = R.drawable.miniquiches, category = "Evento", subcategory1 = "Año nuevo", subcategory2 = "Canapés", ingredients = arrayListOf("Masa para quiche", "Huevos", "Queso", "Espinacas", "Bacon")),
+                    Recipe(name = "Tarta de Santiago", image = R.drawable.tartadesantiago, category = "Evento", subcategory1 = "Año nuevo", subcategory2 = "Postres", ingredients = arrayListOf("Almendras", "Huevo", "Azúcar", "Limón", "Harina")),
+                    Recipe(name = "Fondue de Chocolate", image = R.drawable.fonduedechocolate, category = "Evento", subcategory1 = "Año nuevo", subcategory2 = "Canapés", ingredients = arrayListOf("Chocolate negro", "Crema de leche", "Frutas", "Malvaviscos"))
                 )
 
                 dbAccess.recipeDao().insertarRecetas(recipes)
@@ -178,6 +179,7 @@ class MenuActivity : BaseActivity() {
                     }
                 }
                 setUp()
+
             } else {
                 lifecycleScope.launch {
                     lifecycleScope.launch {

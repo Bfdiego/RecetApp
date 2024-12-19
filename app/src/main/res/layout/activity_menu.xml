@@ -4,10 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="0dp"
     tools:context=".MenuActivity">
-
-
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -15,6 +13,7 @@
         app:layout_constraintTop_toBottomOf="@id/constraint_layout_top"
         app:layout_constraintBottom_toTopOf="@id/card_view_down"
         android:orientation="vertical"
+        android:fillViewport="true"
         android:background="@color/greyBlue">
         
         <LinearLayout
@@ -104,11 +103,21 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view_subcategories"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"/>
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_subcategories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
