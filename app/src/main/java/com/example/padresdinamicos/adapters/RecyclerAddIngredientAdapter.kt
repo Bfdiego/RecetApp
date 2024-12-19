@@ -12,7 +12,6 @@ import com.example.padresdinamicos.dataclasses.Ingredient
 class RecyclerAddIngredientAdapter :
     RecyclerView.Adapter<RecyclerAddIngredientAdapter.IngredientViewHolder>() {
 
-    // Lista para almacenar ingredientes dinámicos
     private val listaIngredientes = mutableListOf<Ingredient>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IngredientViewHolder {
