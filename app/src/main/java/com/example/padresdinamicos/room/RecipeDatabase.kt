@@ -12,7 +12,7 @@ import com.example.padresdinamicos.dataclasses.Subcategory
 
 @Database(
     entities = [Recipe::class],
-    version = 3,
+    version = 4,
     exportSchema = false
 )
 @TypeConverters(Converter::class)

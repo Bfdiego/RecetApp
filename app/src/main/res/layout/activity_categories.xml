@@ -262,9 +262,11 @@
         android:layout_marginTop="-25dp">
 
         <ImageButton
+            android:src="@drawable/add"
             android:id="@+id/button_create_recipe"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
+            android:layout_height="match_parent"
+            android:background="@color/darkRed"
+            />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

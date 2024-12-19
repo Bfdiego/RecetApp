@@ -219,13 +219,24 @@
     </androidx.cardview.widget.CardView>
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <androidx.cardview.widget.CardView
         android:layout_width="70dp"
         android:layout_height="70dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/card_view_down"
-        android:layout_marginTop="-35dp" />
+        app:cardCornerRadius="35dp"
+        android:layout_marginTop="-25dp">
+
+    <ImageButton
+        android:src="@drawable/add"
+        android:id="@+id/button_create_recipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/darkRed"
+        />
+    </androidx.cardview.widget.CardView>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

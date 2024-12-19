@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.padresdinamicos.MenuActivity.Companion.ID_PASO_RECETA
 import com.example.padresdinamicos.adapters.RecyclerIngredientsAdapter
@@ -16,6 +17,8 @@ import com.example.padresdinamicos.databinding.ActivityRecipeBinding
 import com.example.padresdinamicos.dataclasses.Ingredient
 import com.example.padresdinamicos.dataclasses.Recipe
 import com.example.padresdinamicos.dataclasses.Step
+import com.example.padresdinamicos.room.RecipeDatabase
+import kotlinx.coroutines.launch
 import kotlin.random.Random
 
 class RecipeActivity : BaseActivity() {
@@ -23,6 +26,7 @@ class RecipeActivity : BaseActivity() {
     private val recyclerIngredientAdapter by lazy { RecyclerIngredientsAdapter() }
     private val recyclerStepAdapter by lazy { RecyclerStepAdapter() }
     private var currentRecipe: Recipe? = null
+    private val recipeDao by lazy { RecipeDatabase.getDatabase(this).recipeDao() }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -88,19 +92,20 @@ class RecipeActivity : BaseActivity() {
     }
     private fun toggleFavorite() {
         currentRecipe?.let { recipe ->
-            recipe.isFavorite = !recipe.isFavorite  // Invierte el estado
-            setFavoriteIcon(recipe.isFavorite)     // Actualiza el ícono visualmente
-
-            // Aquí puedes guardar en Room si ya lo implementaste
-            Log.d("RecipeActivity", "Receta '${recipe.name}' favorita: ${recipe.isFavorite}")
+            recipe.isFavorite = !recipe.isFavorite // Cambia el estado
+            setFavoriteIcon(recipe.isFavorite)    // Actualiza el ícono visual
+            lifecycleScope.launch {
+                recipeDao.update(recipe)
+                Log.d("RecipeActivity", "Receta '${recipe.name}' favorita: ${recipe.isFavorite}")
+            }
         }
     }
+
     private fun setFavoriteIcon(isFavorite: Boolean) {
         if (isFavorite) {
             binding.buttonFavorite.setImageResource(R.drawable.favoriterojo)  // Ícono marcado
         } else {
             binding.buttonFavorite.setImageResource(R.drawable.favorite) // Ícono sin marcar
         }
-
     }
 }

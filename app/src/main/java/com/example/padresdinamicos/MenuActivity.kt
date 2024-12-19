@@ -224,6 +224,10 @@ class MenuActivity : BaseActivity() {
             val intentSearch = Intent(this, SearchRecipeActivity::class.java)
             startActivity(intentSearch)
         }
+        binding.recetIcon.setOnClickListener {
+            val intentGuardado = Intent(this, GuardadoActivity::class.java)
+            startActivity(intentGuardado)
+        }
         //setUpRecyclerView()
     }
     private fun navigateToHome() {

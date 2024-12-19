@@ -7,6 +7,7 @@ import android.text.InputType
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
+import com.example.padresdinamicos.databinding.ActivityGuardadoBinding
 import com.example.padresdinamicos.databinding.ActivityUserScreenBinding
 
 class UserScreenActivity : AppCompatActivity() {
@@ -14,6 +15,8 @@ class UserScreenActivity : AppCompatActivity() {
     private lateinit var binding: ActivityUserScreenBinding
     private lateinit var editor: SharedPreferences.Editor
     private lateinit var sharedPreferences: SharedPreferences
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +38,7 @@ class UserScreenActivity : AppCompatActivity() {
 
 
         binding.editTextPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+
 
 
         binding.buttonBack.setOnClickListener {
@@ -85,6 +89,29 @@ class UserScreenActivity : AppCompatActivity() {
             } else {
                 showToast("La contraseña debe tener al menos 6 caracteres")
             }
+        }
+        binding.menuIcon.setOnClickListener {
+            val intentMenuActivity = Intent(this, MenuActivity::class.java)
+            startActivity(intentMenuActivity)
+        }
+
+        binding.buttonCreateRecipe.setOnClickListener{
+            val intentCreateRecipe = Intent(this, CreateRecipeActivity::class.java)
+            startActivity(intentCreateRecipe)
+        }
+
+        binding.categoryIcon.setOnClickListener {
+            val intentCategory = Intent(this, CategoriesActivity::class.java)
+            startActivity(intentCategory)
+        }
+
+        binding.userIcon.setOnClickListener {
+            val intentUser = Intent(this, UserScreenActivity::class.java)
+            startActivity(intentUser)
+        }
+        binding.recetIcon.setOnClickListener {
+            val intentGuardado = Intent(this, GuardadoActivity::class.java)
+            startActivity(intentGuardado)
         }
     }
 
