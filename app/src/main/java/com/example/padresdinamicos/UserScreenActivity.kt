@@ -9,8 +9,6 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.core.widget.addTextChangedListener
 import com.example.padresdinamicos.databinding.ActivityUserScreenBinding
 
 class UserScreenActivity : AppCompatActivity() {
@@ -24,13 +22,21 @@ class UserScreenActivity : AppCompatActivity() {
         binding = ActivityUserScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        sharedPreferences = getSharedPreferences("login_prefs", MODE_PRIVATE)
+        editor = sharedPreferences.edit()
+
         val options = arrayOf("Foto de perfil 1", "Foto de perfil 2")
         val images = arrayOf(R.drawable.chefsita, R.drawable.chefsito)
 
 
+        val savedImageIndex = sharedPreferences.getInt("selected_image_index", 0)
+        binding.perfilpicture.setImageResource(images[savedImageIndex])
 
-        sharedPreferences = getSharedPreferences("login_prefs", MODE_PRIVATE)
-        editor = sharedPreferences.edit()
+
+        binding.perfilselect.setOnClickListener {
+            showImageSelector(options, images)
+        }
 
 
         val savedUserName = sharedPreferences.getString("username", "")
@@ -46,17 +52,27 @@ class UserScreenActivity : AppCompatActivity() {
             InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
 
 
-
         binding.menuIcon.setOnClickListener {
-            val intent = Intent(this, MenuActivity::class.java)
-            startActivity(intent)
-            finish()
+            navigateToMenu()
         }
+
+
+        binding.categoryIcon.setOnClickListener {
+            val intent = Intent(this, CategoriesActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        binding.buttonCreateRecipe.setOnClickListener {
+            val intent = Intent(this, CreateRecipeActivity::class.java)
+            startActivity(intent)
+        }
+
+
         binding.atras.setOnClickListener {
-            val intent = Intent(this, MenuActivity::class.java)
-            startActivity(intent)
-            finish()
+            navigateToMenu()
         }
+
 
         binding.edituser.setOnClickListener {
             binding.editTextUser.isEnabled = true
@@ -80,7 +96,6 @@ class UserScreenActivity : AppCompatActivity() {
             val newUserName = binding.editTextUser.text.toString()
             if (newUserName.isNotEmpty() && newUserName != savedUserName) {
                 editor.putString("username", newUserName).apply()
-
                 binding.editTextUser.setText(newUserName)
                 showToast("Nombre de usuario actualizado")
             }
@@ -99,7 +114,7 @@ class UserScreenActivity : AppCompatActivity() {
                 showToast("Correo electrónico inválido o no modificado")
             }
             binding.editTextCorreo.isEnabled = false
-            binding.editcorreo.isEnabled = true  // Rehabilitar el botón de edición
+            binding.editcorreo.isEnabled = true
         }
 
 
@@ -115,61 +130,50 @@ class UserScreenActivity : AppCompatActivity() {
             binding.editTextPassword.isEnabled = false
             binding.editpassword.isEnabled = true
         }
-
-
-        binding.editTextUser.addTextChangedListener {
-            val newUserName = it.toString()
-            if (newUserName.isNotEmpty()) {
-                editor.putString("username", newUserName).apply()
-            }
-        }
-
-        binding.editTextCorreo.addTextChangedListener {
-            val newUserEmail = it.toString()
-            editor.putString("email", newUserEmail).apply()
-        }
-
-        binding.editTextPassword.addTextChangedListener {
-            val newUserPassword = it.toString()
-            if (newUserPassword.length >= 6) {
-                editor.putString("password", newUserPassword).apply()
-            } else {
-                showToast("La contraseña debe tener al menos 6 caracteres")
-            }
-
-            binding.perfilselect.setOnClickListener {
-                val spinner = Spinner(this)
-                val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, options)
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spinner.adapter = adapter
-
-                val builder = AlertDialog.Builder(this)
-                builder.setTitle("Selecciona una imagen")
-                builder.setView(spinner)
-
-                builder.setPositiveButton("Seleccionar") { dialog, _ ->
-
-                    val selectedPosition = spinner.selectedItemPosition
-
-                    binding.perfilpicture.setImageResource(images[selectedPosition])
-                    dialog.dismiss()
-                }
-
-                builder.setNegativeButton("Cancelar") { dialog, _ ->
-                    dialog.dismiss()
-                }
-
-                builder.create().show()
-            }
-        }
     }
+
+
+    private fun navigateToMenu() {
+        val intent = Intent(this, MenuActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+
+    private fun showImageSelector(options: Array<String>, images: Array<Int>) {
+        val spinner = Spinner(this)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, options)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.adapter = adapter
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Selecciona una imagen")
+        builder.setView(spinner)
+
+        builder.setPositiveButton("Seleccionar") { dialog, _ ->
+            val selectedPosition = spinner.selectedItemPosition
+            binding.perfilpicture.setImageResource(images[selectedPosition])
+
+
+            editor.putInt("selected_image_index", selectedPosition).apply()
+
+            dialog.dismiss()
+        }
+
+        builder.setNegativeButton("Cancelar") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        builder.create().show()
+    }
+
 
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
+
     private fun isValidEmail(email: String): Boolean {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 }
-
