@@ -85,7 +85,7 @@ class UserScreenActivity : AppCompatActivity() {
                 showToast("Nombre de usuario actualizado")
             }
             binding.editTextUser.isEnabled = false
-            binding.edituser.isEnabled = true  // Rehabilitar el botón de edición
+            binding.edituser.isEnabled = true
         }
 
 
