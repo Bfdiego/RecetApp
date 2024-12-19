@@ -22,6 +22,8 @@ class RecipeActivity : BaseActivity() {
     private lateinit var  binding: ActivityRecipeBinding
     private val recyclerIngredientAdapter by lazy { RecyclerIngredientsAdapter() }
     private val recyclerStepAdapter by lazy { RecyclerStepAdapter() }
+    private var currentRecipe: Recipe? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,19 +37,23 @@ class RecipeActivity : BaseActivity() {
         binding.buttonBack.setOnClickListener {
             finish()
         }
+        binding.buttonFavorite.setOnClickListener {
+            toggleFavorite()
+        }
     }
 
 
     fun setUpRecyclerView() {
         val recipe: Recipe? = intent.getSerializableExtra(ID_PASO_RECETA) as? Recipe
+        currentRecipe = recipe
         val nameRecipe = recipe?.name
         binding.recipeName.text = nameRecipe
         binding.textCategory.text = recipe?.category
         binding.textSubcategory1.text = recipe?.subcategory1
         binding.textSubcategory2.text = recipe?.subcategory2
         binding.imageRecipe.setImageResource(recipe?.image ?: R.drawable.lasagna)
-
         binding.recyclerViewIngredients.visibility = View.VISIBLE
+        setFavoriteIcon(recipe?.isFavorite ?: false)
 
         val listaIngredientes: ArrayList<String> = recipe?.ingredients ?: arrayListOf()
         val listaIngredientes2: MutableList<Ingredient> = mutableListOf()
@@ -79,5 +85,22 @@ class RecipeActivity : BaseActivity() {
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             adapter = recyclerStepAdapter
         }
+    }
+    private fun toggleFavorite() {
+        currentRecipe?.let { recipe ->
+            recipe.isFavorite = !recipe.isFavorite  // Invierte el estado
+            setFavoriteIcon(recipe.isFavorite)     // Actualiza el ícono visualmente
+
+            // Aquí puedes guardar en Room si ya lo implementaste
+            Log.d("RecipeActivity", "Receta '${recipe.name}' favorita: ${recipe.isFavorite}")
+        }
+    }
+    private fun setFavoriteIcon(isFavorite: Boolean) {
+        if (isFavorite) {
+            binding.buttonFavorite.setImageResource(R.drawable.favoriterojo)  // Ícono marcado
+        } else {
+            binding.buttonFavorite.setImageResource(R.drawable.favorite) // Ícono sin marcar
+        }
+
     }
 }

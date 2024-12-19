@@ -210,8 +210,10 @@
 
         <ImageButton
             android:id="@+id/button_back"
+            android:background="@color/darkBlue"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:src="@drawable/back"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_margin="5dp"
             app:layout_constraintDimensionRatio="1:1"/>
@@ -228,6 +230,8 @@
             android:gravity="center"/>
 
         <ImageButton
+            android:background="@color/darkBlue"
+            android:id="@+id/buttonFavorite"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:layout_constraintEnd_toEndOf="parent"

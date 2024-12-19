@@ -125,14 +125,16 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/menu_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <ImageButton
             android:id="@+id/menu_icon"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
-            android:src="@drawable/round_house_24"
+            android:src="@drawable/home"
+            android:background="@color/white"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toStartOf="parent"/>
         <ImageButton
@@ -140,6 +142,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"
+            android:src="@drawable/categoria"
+            android:background="@color/white"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toEndOf="@id/menu_icon"/>
         <ImageButton
@@ -147,6 +151,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="8dp"
+            android:src="@drawable/receipt"
+            android:background="@color/white"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@id/user_icon"/>
         <ImageButton
@@ -154,6 +160,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="20dp"
+            android:src="@drawable/perfil"
+            android:background="@color/white"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -163,6 +171,8 @@
         android:id="@+id/button_create_recipe"
         android:layout_width="70dp"
         android:layout_height="70dp"
+        android:src="@drawable/add"
+        android:background="@color/darkRed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/card_view_down"
@@ -198,6 +208,8 @@
             android:layout_height="match_parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_margin="5dp"
+            android:src="@drawable/search"
+            android:background="@color/darkBlue"
             app:layout_constraintDimensionRatio="1:1"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
