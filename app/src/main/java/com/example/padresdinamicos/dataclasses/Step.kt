@@ -7,8 +7,8 @@ import androidx.room.PrimaryKey
 data class Step(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val number: String,
-    val name: String,
-    val description: String,
+    var name: String,
+    var description: String,
     val recipe: String
 
 )

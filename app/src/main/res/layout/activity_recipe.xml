@@ -182,7 +182,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
                 android:background="@color/darkBlue"
-                android:text="Preparacíon"
+                android:text="@string/preparacion"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:gravity="center"/>

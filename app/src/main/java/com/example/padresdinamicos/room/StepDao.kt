@@ -22,5 +22,5 @@ interface StepDao {
     suspend fun insert(step: Step)
 
     @Insert
-    suspend fun insertarRecetas(step: List<Step>)
+    suspend fun insertarRecetas(steps: List<Step>)
 }
