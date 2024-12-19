@@ -13,6 +13,11 @@ data class Recipe(
     val subcategory1: String,
     val subcategory2: String,
     val ingredients: ArrayList<String>,
-    var isFavorite: Boolean = false
+    var isFavorite: Boolean = false,
+    val isCreatedByUser: Boolean = false,
+    val dificulty : String,
+    val time : String,
+    val quantity : String,
+    val amount : Array<String>
 ): Serializable
 
