@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="0dp"
     tools:context=".MenuActivity">
-
-
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/constraint_layout_top"
         app:layout_constraintBottom_toTopOf="@id/card_view_down"
         android:orientation="vertical"
+        android:fillViewport="true"
         android:background="@color/greyBlue">
         
         <LinearLayout
@@ -27,37 +26,47 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/image_recipe"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:scaleType="centerCrop"
                     app:layout_constraintDimensionRatio="412:472"
                     app:layout_constraintTop_toTopOf="parent"/>
 
                 <Button
                     android:id="@+id/button_see_recipe"
-                    android:layout_width="170dp"
-                    android:layout_height="50dp"
+                    android:layout_width="200dp"
+                    android:layout_height="60dp"
+                    android:text="@string/ver_receta"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/darkRed"
+                    android:textSize="25sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_margin="10dp"/>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card_view_category"
-                    android:layout_width="60dp"
-                    android:layout_height="20dp"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
                     app:layout_constraintStart_toStartOf="@id/button_see_recipe"
                     app:layout_constraintBottom_toTopOf="@id/button_see_recipe"
                     android:layout_marginBottom="10dp"
                     app:cardCornerRadius="10dp">
 
                     <TextView
+                        android:id="@+id/category_name"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:background="@color/darkRed"
+                        android:textColor="@color/white"
                         android:text=""/>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="60dp"
-                    android:layout_height="20dp"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
                     app:layout_constraintStart_toEndOf="@id/card_view_category"
                     app:layout_constraintBottom_toTopOf="@id/button_see_recipe"
                     android:layout_marginStart="10dp"
@@ -65,33 +74,42 @@
                     app:cardCornerRadius="10dp">
 
                     <TextView
+                        android:id="@+id/subcategory_name"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@color/darkRed"
+                        android:textColor="@color/white"
+                        android:gravity="center"
                         android:text=""/>
                 </androidx.cardview.widget.CardView>
-
-                <ImageButton
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    app:layout_constraintTop_toTopOf="@id/button_see_recipe"
-                    app:layout_constraintBottom_toBottomOf="@id/button_see_recipe"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginEnd="10dp"/>
-                
                 <TextView
+                    android:id="@+id/name_recipe"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
+                    android:textSize="40sp"
+                    android:textColor="@color/white"
                     app:layout_constraintStart_toStartOf="@id/button_see_recipe"
                     app:layout_constraintBottom_toTopOf="@id/card_view_category"
                     android:text=""/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view_subcategories"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"/>
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_subcategories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
@@ -108,14 +126,16 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/menu_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <ImageButton
             android:id="@+id/menu_icon"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
-            android:src="@drawable/round_house_24"
+            android:src="@drawable/home"
+            android:background="@color/white"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toStartOf="parent"/>
         <ImageButton
@@ -123,6 +143,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"
+            android:src="@drawable/categoria"
+            android:background="@color/white"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toEndOf="@id/menu_icon"/>
         <ImageButton
@@ -130,6 +152,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="8dp"
+            android:src="@drawable/receipt"
+            android:background="@color/white"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@id/user_icon"/>
         <ImageButton
@@ -137,18 +161,32 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="20dp"
+            android:src="@drawable/perfil"
+            android:background="@color/white"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <androidx.cardview.widget.CardView
         android:layout_width="70dp"
         android:layout_height="70dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/card_view_down"
-        android:layout_marginTop="-35dp" />
+        app:cardCornerRadius="35dp"
+        android:layout_marginTop="-25dp">
+
+        <ImageButton
+            android:src="@drawable/add"
+            android:id="@+id/button_create_recipe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/darkRed"
+            />
+
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout_top"
@@ -176,10 +214,13 @@
         </androidx.cardview.widget.CardView>
 
         <ImageButton
+            android:id="@+id/image_button_search"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_margin="5dp"
+            android:src="@drawable/search"
+            android:background="@color/darkBlue"
             app:layout_constraintDimensionRatio="1:1"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

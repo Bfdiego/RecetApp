@@ -46,6 +46,7 @@ class RecyclerSubcategoryAdapter : RecyclerView.Adapter<RecyclerSubcategoryAdapt
                 adapter = recipeAdapter
             }
 
+
             recipeAdapter.addDataToList(data.recipes)
         }
     }

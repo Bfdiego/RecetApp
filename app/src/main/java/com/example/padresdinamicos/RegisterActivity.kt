@@ -1,6 +1,5 @@
 package com.example.padresdinamicos
 
-
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -10,58 +9,73 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.padresdinamicos.databinding.ActivityRegisterBinding
 
-class RegisterActivity : AppCompatActivity() {
+class RegisterActivity : BaseActivity() {
 
+    private lateinit var binding: ActivityRegisterBinding
     private lateinit var sharedPreferences: SharedPreferences
-    private lateinit var editTextEmail: EditText
-    private lateinit var editTextPassword: EditText
-    private lateinit var editTextConfirmPassword: EditText
-    private lateinit var buttonRegister: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // Inicializar SharedPreferences
+
         sharedPreferences = getSharedPreferences("login_prefs", MODE_PRIVATE)
 
-        // Enlazar vistas
-        editTextEmail = findViewById(R.id.edit_text_email)
-        editTextPassword = findViewById(R.id.edit_text_password)
-        editTextConfirmPassword = findViewById(R.id.edit_text_confirm_password)
-        buttonRegister = findViewById(R.id.button_login)
 
-        // Acción al hacer clic en el botón de registro
-        buttonRegister.setOnClickListener {
-            val email = editTextEmail.text.toString().trim()
-            val password = editTextPassword.text.toString().trim()
-            val confirmPassword = editTextConfirmPassword.text.toString().trim()
+       binding.buttonLogin.setOnClickListener {
+            val email = binding.editTextEmail.text.toString().trim()
+            val password = binding.editTextPassword.text.toString().trim()
+            val confirmPassword = binding.editTextConfirmPassword.text.toString().trim()
 
-            // Validación de campos vacíos
+
             if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
-                Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()
+                showToast("Por favor, complete todos los campos")
                 return@setOnClickListener
             }
 
-            // Validación de contraseña
+
             if (password != confirmPassword) {
-                Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
+                showToast("Las contraseñas no coinciden")
                 return@setOnClickListener
             }
 
-            // Guardar las credenciales en SharedPreferences
+
+            if (password.length < 6) {
+                showToast("La contraseña debe tener al menos 6 caracteres")
+                return@setOnClickListener
+            }
+
+
+            if (!isValidEmail(email)) {
+                showToast("El correo electrónico no es válido")
+                return@setOnClickListener
+            }
+
+
             sharedPreferences.edit()
                 .putString("email", email)
                 .putString("password", password)
                 .apply()
 
-            // Confirmación de registro exitoso
-            Toast.makeText(this, "¡Registro exitoso! Ahora inicie sesión.", Toast.LENGTH_SHORT).show()
 
-            // Navegar de regreso a LoginActivity
+            showToast("¡Registro exitoso! Ahora inicie sesión.")
+
+
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }
     }
+
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+
+    private fun isValidEmail(email: String): Boolean {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
+
 }

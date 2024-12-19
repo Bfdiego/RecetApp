@@ -43,6 +43,7 @@ class RecyclerIngredientsAdapter: RecyclerView.Adapter<RecyclerIngredientsAdapte
     fun addDataToList(data: List<Ingredient>) {
         listaDatos.clear()
         listaDatos.addAll(data)
+        notifyDataSetChanged()
     }
 
 }

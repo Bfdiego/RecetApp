@@ -30,6 +30,7 @@
                     android:layout_width="300dp"
                     android:layout_height="0dp"
                     android:layout_marginBottom="20dp"
+                    android:scaleType="centerCrop"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="@id/text_category_2"
                     app:layout_constraintStart_toStartOf="parent"
@@ -48,11 +49,13 @@
                     app:layout_constraintEnd_toStartOf="@id/text_category_2">
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:id="@+id/text_category"
+                        android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:textColor="@color/white"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:text=""
+                        android:gravity="center"
                         android:background="@color/darkRed"/>
 
                 </androidx.cardview.widget.CardView>
@@ -69,11 +72,13 @@
                     app:layout_constraintEnd_toEndOf="parent">
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:id="@+id/text_subcategory1"
+                        android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:textColor="@color/white"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:text=""
+                        android:gravity="center"
                         android:background="@color/darkRed"/>
 
                 </androidx.cardview.widget.CardView>
@@ -90,11 +95,13 @@
                     app:layout_constraintStart_toEndOf="@id/text_category_2">
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:id="@+id/text_subcategory2"
+                        android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:textColor="@color/white"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:text=""
+                        android:gravity="center"
                         android:background="@color/darkRed"/>
 
                 </androidx.cardview.widget.CardView>
@@ -104,15 +111,18 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="20dp"
+                    android:src="@drawable/personasgrupo"
                     app:layout_constraintStart_toStartOf="@id/text_category_1"
                     app:layout_constraintTop_toBottomOf="@id/text_category_1"/>
 
                 <TextView
+                    android:id="@+id/text_people"
                     android:layout_width="50dp"
                     android:layout_height="40dp"
                     android:text=""
                     android:textColor="@color/white"
-                    android:textSize="20sp"
+                    android:textSize="10sp"
+                    android:gravity="center"
                     app:layout_constraintStart_toEndOf="@id/image_people"
                     app:layout_constraintTop_toTopOf="@id/image_people"/>
 
@@ -121,15 +131,18 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="20dp"
+                    android:src="@drawable/tiempo"
                     app:layout_constraintStart_toStartOf="@id/text_category_2"
                     app:layout_constraintTop_toBottomOf="@id/text_category_2"/>
 
                 <TextView
+                    android:id="@+id/text_time"
                     android:layout_width="50dp"
                     android:layout_height="40dp"
                     android:text=""
                     android:textColor="@color/white"
-                    android:textSize="20sp"
+                    android:textSize="10sp"
+                    android:gravity="center"
                     app:layout_constraintStart_toEndOf="@id/image_time"
                     app:layout_constraintTop_toTopOf="@id/image_time"/>
 
@@ -138,15 +151,18 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="20dp"
+                    android:src="@drawable/dificultad"
                     app:layout_constraintStart_toStartOf="@id/text_category_3"
                     app:layout_constraintTop_toBottomOf="@id/text_category_3"/>
 
                 <TextView
+                    android:id="@+id/text_difficulty"
                     android:layout_width="75dp"
                     android:layout_height="40dp"
                     android:text=""
                     android:textColor="@color/white"
-                    android:textSize="20sp"
+                    android:textSize="10sp"
+                    android:gravity="center"
                     app:layout_constraintStart_toEndOf="@id/image_difficulty"
                     app:layout_constraintTop_toTopOf="@id/image_difficulty"/>
 
@@ -175,7 +191,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
                 android:background="@color/darkBlue"
-                android:text="Preparacíon"
+                android:text="@string/preparacion"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:gravity="center"/>
@@ -202,13 +218,17 @@
         android:background="@color/darkBlue">
 
         <ImageButton
+            android:id="@+id/button_back"
+            android:background="@color/darkBlue"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:src="@drawable/back"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_margin="5dp"
             app:layout_constraintDimensionRatio="1:1"/>
 
         <TextView
+            android:id="@+id/recipe_name"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -219,6 +239,8 @@
             android:gravity="center"/>
 
         <ImageButton
+            android:background="@color/darkBlue"
+            android:id="@+id/buttonFavorite"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:layout_constraintEnd_toEndOf="parent"

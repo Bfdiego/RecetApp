@@ -1,8 +1,13 @@
 package com.example.padresdinamicos.dataclasses
 
-data class Step(
-    val number: String,
-    val name: String,
-    val description: String
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
+@Entity
+data class Step(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    val number: String,
+    var name: String,
+    var description: String,
+    val recipe: String
 )

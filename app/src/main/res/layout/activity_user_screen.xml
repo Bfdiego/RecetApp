@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserScreenActivity"
+    android:background="@color/greyBlue">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/image_user"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        app:layout_constraintTop_toBottomOf="@id/constraint_layout_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        app:cardCornerRadius="110dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:id="@+id/perfilpicture"
+            android:layout_height="match_parent"
+            android:src="@color/black"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintEnd_toEndOf="@id/image_user"
+        app:layout_constraintBottom_toBottomOf="@id/image_user"
+        app:cardCornerRadius="35dp">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/perfilselect"
+            android:clickable="true"
+            android:src="@drawable/add2"
+            android:background="@color/darkRed"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:textColor="@color/white"
+        android:text="Nombre de Usuario"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@id/edit_text_user"
+        app:layout_constraintBottom_toTopOf="@id/edit_text_user"/>
+    <EditText
+        android:id="@+id/edit_text_user"
+        android:layout_width="370dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:hint="Introduzca nombre de usuario"
+        android:enabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_user" />
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:id="@+id/edituser"
+        android:src="@drawable/edit"
+        android:background="@color/transparent"
+        app:layout_constraintStart_toEndOf="@id/confirm_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/edit_text_user"
+        app:layout_constraintBottom_toBottomOf="@id/edit_text_user"/>
+    <ImageButton
+        android:id="@+id/confirm_user"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="315dp"
+        android:layout_marginEnd="25dp"
+        android:src="@drawable/save"
+        android:background="@color/transparent"
+        app:layout_constraintBottom_toBottomOf="@id/edit_text_user"
+        app:layout_constraintEnd_toEndOf="@+id/edituser"
+        app:layout_constraintStart_toStartOf="@+id/edit_text_user"
+        app:layout_constraintTop_toTopOf="@id/edit_text_user" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:textColor="@color/white"
+        android:text="Correo"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@id/edit_text_correo"
+        app:layout_constraintBottom_toTopOf="@id/edit_text_correo"/>
+    <EditText
+        android:id="@+id/edit_text_correo"
+        android:layout_width="370dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:enabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_user"/>
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:id="@+id/editcorreo"
+        android:src="@drawable/edit"
+        android:background="@color/transparent"
+        app:layout_constraintStart_toEndOf="@id/confirm_correo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/edit_text_correo"
+        app:layout_constraintBottom_toBottomOf="@id/edit_text_correo"/>
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="315dp"
+        android:layout_marginEnd="25dp"
+        android:id="@+id/confirm_correo"
+        android:src="@drawable/save"
+        android:background="@color/transparent"
+        app:layout_constraintTop_toTopOf="@id/edit_text_correo"
+        app:layout_constraintBottom_toBottomOf="@id/edit_text_correo"
+        app:layout_constraintEnd_toEndOf="@+id/editcorreo"
+        app:layout_constraintStart_toStartOf="@+id/edit_text_correo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:textColor="@color/white"
+        android:text="Contraseña"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@id/edit_text_password"
+        app:layout_constraintBottom_toTopOf="@id/edit_text_password"/>
+    <EditText
+        android:id="@+id/edit_text_password"
+        android:layout_width="370dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:enabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_correo" />
+
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="315dp"
+        android:id="@+id/confirm_password"
+        android:src="@drawable/save"
+        android:background="@color/transparent"
+        app:layout_constraintTop_toTopOf="@id/edit_text_password"
+        app:layout_constraintBottom_toBottomOf="@id/edit_text_password"
+        app:layout_constraintEnd_toEndOf="@+id/editpassword"
+        app:layout_constraintStart_toStartOf="@id/edit_text_password"/>
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:id="@+id/editpassword"
+        android:src="@drawable/edit"
+        android:background="@color/transparent"
+        app:layout_constraintStart_toEndOf="@+id/confirm_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/edit_text_password"
+        app:layout_constraintBottom_toBottomOf="@id/edit_text_password" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintDimensionRatio="542:100"
+        android:background="@color/darkBlue">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Perfil"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:textColor="@color/white"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_down"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="542:100"
+        app:cardCornerRadius="30dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/menu_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ImageButton
+                android:id="@+id/menu_icon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/home"
+                android:background="@color/white"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <ImageButton
+                android:id="@+id/category_icon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/categoria"
+                android:background="@color/white"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toEndOf="@id/menu_icon"/>
+            <ImageButton
+                android:id="@+id/recet_icon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/receipt"
+                android:background="@color/white"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/user_icon"/>
+            <ImageButton
+                android:id="@+id/user_icon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/perfil"
+                android:background="@color/white"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/card_view_down"
+        app:cardCornerRadius="35dp"
+        android:layout_marginTop="-25dp">
+
+    <ImageButton
+        android:src="@drawable/add"
+        android:id="@+id/button_create_recipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/darkRed"
+        />
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
