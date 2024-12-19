@@ -24,8 +24,8 @@ interface RecipeDao {
     @Query("SELECT * FROM Recipe WHERE category =:category")
     suspend fun obtenerPorCategoria(category: String): List<Recipe>
 
-    @Query("SELECT * FROM Recipe WHERE name =:name")
-    suspend fun obtenerPorNombre(name: String): Recipe
+    @Query("SELECT * FROM recipe WHERE LOWER(name) LIKE LOWER(:query)")
+    suspend fun obtenerPorNombre(query: String): List<Recipe>
 
     @Query("SELECT * FROM Recipe ORDER BY RANDOM() LIMIT 1")
     suspend fun obtenerRecetaAleatoria(): Recipe
