@@ -96,6 +96,7 @@
                 android:id="@+id/image_people"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:src="@drawable/personasgrupo2"
                 android:layout_marginTop="20dp"
                 app:layout_constraintStart_toStartOf="@id/editText_subcategory1"
                 app:layout_constraintTop_toBottomOf="@id/editText_subcategory1"/>
@@ -120,6 +121,7 @@
                 android:id="@+id/image_time"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:src="@drawable/tiempo2"
                 android:layout_marginTop="20dp"
                 app:layout_constraintStart_toStartOf="@id/editText_subcategory2"
                 app:layout_constraintTop_toBottomOf="@id/editText_subcategory2"/>
@@ -144,6 +146,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="20dp"
+                android:src="@drawable/dificultad2"
                 app:layout_constraintStart_toEndOf="@id/editText_time"
                 app:layout_constraintTop_toTopOf="@id/editText_time"/>
 
