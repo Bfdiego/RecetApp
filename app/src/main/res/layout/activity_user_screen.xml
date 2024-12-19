@@ -40,7 +40,8 @@
             android:layout_height="match_parent"
             android:id="@+id/perfilselect"
             android:clickable="true"
-            android:src="@color/white"/>
+            android:src="@drawable/add2"
+            android:background="@color/darkRed"/>
 
     </androidx.cardview.widget.CardView>
 

@@ -70,10 +70,6 @@ class UserScreenActivity : BaseActivity() {
         }
 
 
-        binding.buttonBack.setOnClickListener {
-            navigateToMenu()
-        }
-
 
         binding.edituser.setOnClickListener {
             binding.editTextUser.isEnabled = true

@@ -13,7 +13,7 @@ import com.example.padresdinamicos.dataclasses.Subcategory
 
 @Database(
     entities = [Recipe::class, Step::class],
-    version = 4,
+    version = 5,
     exportSchema = false
 )
 @TypeConverters(Converter::class)
