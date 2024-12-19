@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="PAISES"
+                android:text="@string/paises"
                 android:textColor="@color/white"
                 android:textSize="28sp"/>
         </FrameLayout>
@@ -68,7 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="TIPO DE COMIDA"
+                android:text="@string/tipo_de_comida"
                 android:textColor="@color/white"
                 android:textSize="28sp"/>
         </FrameLayout>
@@ -102,7 +102,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="ESTILO DE ALIMENTACION"
+                android:text="@string/estilo_de_alimentacion"
                 android:textColor="@color/white"
                 android:textSize="28sp"/>
         </FrameLayout>
@@ -136,7 +136,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="METODO DE PREPARACION"
+                android:text="@string/metodo_de_preparacion"
                 android:textColor="@color/white"
                 android:textSize="28sp"/>
         </FrameLayout>
@@ -170,7 +170,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="EVENTOS"
+                android:text="@string/eventos"
                 android:textColor="@color/white"
                 android:textSize="28sp"/>
         </FrameLayout>
@@ -191,7 +191,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Categorías"
+            android:text="@string/categorias"
             android:textSize="30sp"
             android:gravity="center"
             android:textColor="@color/white"/>

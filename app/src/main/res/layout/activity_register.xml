@@ -26,7 +26,7 @@
         android:layout_marginBottom="650dp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="80dp"
-        android:text="Create your account"
+        android:text="@string/crea_tu_cuenta"
         android:textSize="18sp"/>
 
     <EditText
@@ -35,7 +35,7 @@
         android:layout_height="45dp"
         app:layout_constraintStart_toStartOf="@id/text_login"
         app:layout_constraintTop_toBottomOf="@id/text_login"
-        android:hint="Email"
+        android:hint="@string/correo"
         android:layout_marginTop="40dp"
         android:inputType="textEmailAddress"/>
 
@@ -46,7 +46,7 @@
         app:layout_constraintStart_toStartOf="@id/text_login"
         app:layout_constraintTop_toBottomOf="@id/edit_text_email"
         android:layout_marginTop="40dp"
-        android:hint="Password"
+        android:hint="@string/contrase_a"
         android:inputType="textPassword"/>
 
     <EditText
@@ -56,7 +56,7 @@
         app:layout_constraintStart_toStartOf="@id/text_login"
         app:layout_constraintTop_toBottomOf="@id/edit_text_password"
         android:layout_marginTop="40dp"
-        android:hint="Confirm Password"
+        android:hint="@string/confirma_tu_contrase_a"
         android:inputType="textPassword"/>
 
     <Button
@@ -67,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@id/edit_text_confirm_password"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/darkRed"
-        android:text="Sign up"/>
+        android:text="@string/registrarse"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
