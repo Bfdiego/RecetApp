@@ -38,6 +38,7 @@
                     android:layout_width="200dp"
                     android:layout_height="60dp"
                     android:text="Ver receta"
+                    android:backgroundTint="@color/darkRed"
                     android:textSize="25sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -81,16 +82,6 @@
                         android:gravity="center"
                         android:text=""/>
                 </androidx.cardview.widget.CardView>
-
-                <ImageButton
-                    android:id="@+id/buttonFavorite"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    app:layout_constraintTop_toTopOf="@id/button_see_recipe"
-                    app:layout_constraintBottom_toBottomOf="@id/button_see_recipe"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginEnd="10dp"/>
-                
                 <TextView
                     android:id="@+id/name_recipe"
                     android:layout_width="wrap_content"
