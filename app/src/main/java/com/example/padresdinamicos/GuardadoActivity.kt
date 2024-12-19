@@ -15,6 +15,10 @@ class GuardadoActivity : BaseActivity() {
         binding = ActivityGuardadoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.buttonBack.setOnClickListener {
+            finish()
+        }
+
         binding.recetasfavoritas.setOnClickListener {
             val intentFavor = Intent(this, FavoriteRecipeActivity::class.java)
             startActivity(intentFavor)

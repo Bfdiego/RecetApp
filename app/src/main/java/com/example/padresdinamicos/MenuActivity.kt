@@ -206,6 +206,11 @@ class MenuActivity : BaseActivity() {
             val intentCreateRecipe = Intent(this, CreateRecipeActivity::class.java)
             startActivity(intentCreateRecipe)
         }
+        binding.recetIcon.setOnClickListener{
+            val intentrecetActivity = Intent(this, GuardadoActivity::class.java)
+            startActivity(intentrecetActivity)
+        }
+
 
         binding.categoryIcon.setOnClickListener{
             val intentCategory = Intent(this, CategoriesActivity::class.java)

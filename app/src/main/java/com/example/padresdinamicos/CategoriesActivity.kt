@@ -31,6 +31,10 @@ class CategoriesActivity : BaseActivity() {
             val intentUserActivity = Intent(this, UserScreenActivity::class.java)
             startActivity(intentUserActivity)
         }
+        binding.recetIcon.setOnClickListener{
+            val intentrecetActivity = Intent(this, GuardadoActivity::class.java)
+            startActivity(intentrecetActivity)
+        }
 
         binding.buttonCreateRecipe.setOnClickListener{
             val intentCreateRecipe = Intent(this, CreateRecipeActivity::class.java)
