@@ -13,7 +13,7 @@
         android:theme="@style/Theme.PadresDinamicos"
         tools:targetApi="31">
         <activity
-            android:name=".userScreen"
+            android:name=".UserScreenActivity"
             android:exported="false" />
         <activity
             android:name=".CategoriesActivity"

@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".userScreen"
+    tools:context=".UserScreenActivity"
     android:background="@color/greyBlue">
 
 
@@ -22,6 +22,7 @@
 
         <ImageView
             android:layout_width="match_parent"
+            android:id="@+id/perfilpicture"
             android:layout_height="match_parent"
             android:src="@color/black"/>
 
@@ -34,9 +35,11 @@
         app:layout_constraintBottom_toBottomOf="@id/image_user"
         app:cardCornerRadius="35dp">
 
-        <ImageView
+        <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/perfilselect"
+            android:clickable="true"
             android:src="@color/white"/>
 
     </androidx.cardview.widget.CardView>
@@ -50,24 +53,37 @@
         android:gravity="center"
         app:layout_constraintStart_toStartOf="@id/edit_text_user"
         app:layout_constraintBottom_toTopOf="@id/edit_text_user"/>
+
     <EditText
         android:id="@+id/edit_text_user"
         android:layout_width="370dp"
         android:layout_height="70dp"
         android:layout_marginTop="30dp"
-        android:hint="Introduzca nombre de usuario"
         android:enabled="false"
+        android:hint="Introduzca nombre de usuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_user"/>
+        app:layout_constraintTop_toBottomOf="@id/image_user" />
     <ImageButton
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
         android:id="@+id/edituser"
+        app:layout_constraintStart_toEndOf="@id/confirm_user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/edit_text_user"
         app:layout_constraintBottom_toBottomOf="@id/edit_text_user"/>
+    <ImageButton
+        android:id="@+id/confirm_user"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="315dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintBottom_toBottomOf="@id/edit_text_user"
+        app:layout_constraintEnd_toEndOf="@+id/edituser"
+        app:layout_constraintStart_toStartOf="@+id/edit_text_user"
+        app:layout_constraintTop_toTopOf="@id/edit_text_user" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -90,11 +106,23 @@
     <ImageButton
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
         android:id="@+id/editcorreo"
+        app:layout_constraintStart_toEndOf="@id/confirm_correo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/edit_text_correo"
         app:layout_constraintBottom_toBottomOf="@id/edit_text_correo"/>
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="315dp"
+        android:layout_marginEnd="25dp"
+        android:id="@+id/confirm_correo"
+        app:layout_constraintTop_toTopOf="@id/edit_text_correo"
+        app:layout_constraintBottom_toBottomOf="@id/edit_text_correo"
+        app:layout_constraintEnd_toEndOf="@+id/editcorreo"
+        app:layout_constraintStart_toStartOf="@+id/edit_text_correo"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -103,26 +131,39 @@
         android:text="Contraseña"
         android:textSize="15sp"
         android:gravity="center"
-        android:enabled="false"
         app:layout_constraintStart_toStartOf="@id/edit_text_password"
         app:layout_constraintBottom_toTopOf="@id/edit_text_password"/>
+
     <EditText
         android:id="@+id/edit_text_password"
         android:layout_width="370dp"
         android:layout_height="70dp"
         android:layout_marginTop="30dp"
-
+        android:enabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_text_correo"/>
+        app:layout_constraintTop_toBottomOf="@id/edit_text_correo" />
+
     <ImageButton
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="315dp"
+        android:id="@+id/confirm_password"
+        app:layout_constraintTop_toTopOf="@id/edit_text_password"
+        app:layout_constraintBottom_toBottomOf="@id/edit_text_password"
+        app:layout_constraintEnd_toEndOf="@+id/editpassword"
+        app:layout_constraintStart_toStartOf="@id/edit_text_password"/>
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
         android:id="@+id/editpassword"
+        app:layout_constraintStart_toEndOf="@+id/confirm_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/edit_text_password"
-        app:layout_constraintBottom_toBottomOf="@id/edit_text_password"/>
+        app:layout_constraintBottom_toBottomOf="@id/edit_text_password" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout_top"
@@ -147,6 +188,7 @@
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:id="@+id/atras"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_margin="5dp"
             app:layout_constraintDimensionRatio="1:1"/>

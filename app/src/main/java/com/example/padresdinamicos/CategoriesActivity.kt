@@ -2,14 +2,9 @@ package com.example.padresdinamicos
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.padresdinamicos.databinding.ActivityCategoriesBinding
-import com.example.padresdinamicos.databinding.ActivityMenuBinding
-import com.example.padresdinamicos.databinding.ActivityUserScreenBinding
 
 class CategoriesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCategoriesBinding
@@ -26,7 +21,7 @@ class CategoriesActivity : AppCompatActivity() {
             startActivity(intentMenuActivity)
         }
         binding.userIcon.setOnClickListener{
-            val intentUserActivity = Intent(this, userScreen::class.java)
+            val intentUserActivity = Intent(this, UserScreenActivity::class.java)
             startActivity(intentUserActivity)
 
         }

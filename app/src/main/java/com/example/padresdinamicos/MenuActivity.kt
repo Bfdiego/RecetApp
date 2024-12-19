@@ -4,19 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.padresdinamicos.adapters.RecyclerRecipeAdapter
 import com.example.padresdinamicos.adapters.RecyclerSubcategoryAdapter
 import com.example.padresdinamicos.databinding.ActivityMenuBinding
-import com.example.padresdinamicos.databinding.ActivityUserScreenBinding
 import com.example.padresdinamicos.dataclasses.Recipe
 import com.example.padresdinamicos.dataclasses.Subcategory
 import com.example.padresdinamicos.room.RecipeDatabase
 import com.example.padresdinamicos.room.RecipeDatabase.Companion.getDatabase
-import com.google.gson.Gson
 import kotlinx.coroutines.launch
 
 class MenuActivity : AppCompatActivity() {
@@ -229,7 +224,7 @@ class MenuActivity : AppCompatActivity() {
         }
 
         binding.userIcon.setOnClickListener{
-            val intentUserActivity = Intent(this, userScreen::class.java)
+            val intentUserActivity = Intent(this, UserScreenActivity::class.java)
             startActivity(intentUserActivity)
         }
 
