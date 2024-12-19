@@ -91,7 +91,12 @@ class CreateRecipeActivity : AppCompatActivity() {
                 subcategory1 = subcategory1,
                 subcategory2 = subcategory2,
                 ingredients = listaIngredientes,
-                isFavorite = false
+                isFavorite = false,
+                isCreatedByUser = true,
+                dificulty = difficulty,
+                time = time,
+                quantity = "",
+                amount = listaIngredientes2
             )
 
            lifecycleScope.launch {
