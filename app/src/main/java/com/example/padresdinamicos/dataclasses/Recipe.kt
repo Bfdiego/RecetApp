@@ -18,6 +18,6 @@ data class Recipe(
     val dificulty : String,
     val time : String,
     val quantity : String,
-    val amount : Array<String>
+    val amount : ArrayList<String>
 ): Serializable
 
