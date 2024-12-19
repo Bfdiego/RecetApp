@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import com.example.padresdinamicos.databinding.ActivityUserScreenBinding
 
-class UserScreenActivity : AppCompatActivity() {
+class UserScreenActivity : BaseActivity() {
 
     private lateinit var binding: ActivityUserScreenBinding
     private lateinit var editor: SharedPreferences.Editor
