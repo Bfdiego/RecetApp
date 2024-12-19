@@ -111,6 +111,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="20dp"
+                    android:src="@drawable/personasgrupo"
                     app:layout_constraintStart_toStartOf="@id/text_category_1"
                     app:layout_constraintTop_toBottomOf="@id/text_category_1"/>
 
@@ -128,6 +129,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="20dp"
+                    android:src="@drawable/tiempo"
                     app:layout_constraintStart_toStartOf="@id/text_category_2"
                     app:layout_constraintTop_toBottomOf="@id/text_category_2"/>
 
@@ -145,6 +147,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="20dp"
+                    android:src="@drawable/dificultad"
                     app:layout_constraintStart_toStartOf="@id/text_category_3"
                     app:layout_constraintTop_toBottomOf="@id/text_category_3"/>
 
